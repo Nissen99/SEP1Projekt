@@ -1,4 +1,8 @@
-public class MyDate
+package LogikLag;
+
+import java.io.Serializable;
+
+public class MyDate implements Serializable
 {
   private int day;
   private int month;

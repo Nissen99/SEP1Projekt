@@ -1,4 +1,8 @@
-public class Task
+package LogikLag;
+
+import java.io.Serializable;
+
+public class Task implements Serializable
 {
   private MyDate taskDeadline;
   private int taskID;

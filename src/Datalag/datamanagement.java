@@ -1,4 +1,4 @@
-
+package Datalag;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -44,10 +44,10 @@ public class datamanagement implements Serializable {
     public void WritetoFile(Employee employee) {
         try {
             FileOutputStream outputStream = new FileOutputStream(EMPLOYEE_FILE);
-            ObjectOutputStream WriteToFile =  new ObjectOutputStream(outputStream);
-            WriteToFile.writeObject(employee);
+            ObjectOutputStream WriteToFileStream =  new ObjectOutputStream(outputStream);
+            WriteToFileStream.writeObject(employee);
             outputStream.close();
-            WriteToFile.close();
+            WriteToFileStream.close();
         } catch (FileNotFoundException ex) {
             Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {

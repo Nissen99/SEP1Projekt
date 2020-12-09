@@ -1,6 +1,9 @@
+package LogikLag;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Requirement
+public class Requirement implements Serializable
 {
   private MyDate requirementDeadline;
   private ArrayList<Task> tasks;

@@ -1,3 +1,5 @@
+package LogikLag;
+
 public class Client
 {
   private String clientName;

@@ -1,4 +1,8 @@
-public class Employee
+package LogikLag;
+
+import java.io.Serializable;
+
+public class Employee implements  Serializable
 {
   private int employeeID;
   private String employeeName;

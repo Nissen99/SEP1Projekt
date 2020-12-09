@@ -1,3 +1,5 @@
+package LogikLag;
+
 public class TestLogik
 {
   public static void main(String[] args)

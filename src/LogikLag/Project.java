@@ -1,6 +1,9 @@
+package LogikLag;
+
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Project
+public class Project implements Serializable
 {
   private Client client;
   private ArrayList<Requirement> requirements;
@@ -13,7 +16,7 @@ public class Project
   private String projectStatus;
 
   public Project(String projectName, int projectEstimatedHours, Client client,
-      TeamMemberList teamMemberList, MyDate projectDeadline)
+                 TeamMemberList teamMemberList, MyDate projectDeadline)
   {
     this.projectName = projectName;
     this.projectEstimatedHours = projectEstimatedHours;
