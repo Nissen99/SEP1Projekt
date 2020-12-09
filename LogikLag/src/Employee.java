@@ -8,11 +8,34 @@ public class Employee
   public Employee(String employeeName)
   {
     this.employeeName = employeeName;
-    this.role = "Employee";
+    this.role = "employee";
   }
 
   public void setRole(String role){
-this.role = role; //Switch case later
+ //Switch case for at være sikker på man får en valid rolle
+
+    switch (role){
+
+      case "employee":
+        this.role = "employee";
+        break;
+
+      case "team member":
+        this.role = "team member";
+        break;
+
+      case "scrum master":
+        this.role = "scrum master";
+        break;
+
+      case "product owner":
+        this.role = "product owner";
+        break;
+
+      default:
+        break;
+    }
+
   }
 
   public Employee copy()
