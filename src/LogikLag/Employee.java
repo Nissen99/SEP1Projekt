@@ -1,8 +1,10 @@
 package LogikLag;
 
+import Acquaintance.IEmployee;
+
 import java.io.Serializable;
 
-public class Employee implements  Serializable
+public class Employee implements IEmployee,  Serializable
 {
   private int employeeID;
   private String employeeName;
