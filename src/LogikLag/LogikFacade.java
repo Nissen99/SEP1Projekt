@@ -1,6 +1,6 @@
 package LogikLag;
 
-import
+import Acquaintance.*;
 
 public class LogikFacade implements ILogik {
 
