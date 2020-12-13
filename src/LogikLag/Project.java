@@ -37,6 +37,7 @@ public class Project implements Serializable
       }
     }
     return null; //Throw something idk
+    // vi skal lave noget andet siden vi ikke kan returne null. virker ikke i facaden :P
   }
 
 

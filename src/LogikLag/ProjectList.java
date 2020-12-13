@@ -11,7 +11,7 @@ public class ProjectList
     projects = new ArrayList<>();
   }
 
-
+// er det ike det samme som getProjectID?
   public Project getProject(int projectID){
     for (int i = 0; i < projects.size(); i++)
     {
@@ -40,7 +40,7 @@ public class ProjectList
   {
     return projects;
   }
-
+// vi har metoden to steder måske skal vi samle eller noget i den duer. en her og en anden i project.
   public int getNumberOfProjects(){
     return projects.size();
   }
@@ -56,6 +56,7 @@ public class ProjectList
     }
     return placeHolder;
   }
+  // samme her med project står 2 steder eventuelt samler vi den i project så det ikke fylder.
 
   public Project getProjectByID(int projectID){
     for (int i = 0; i < projects.size(); i++)
@@ -66,7 +67,8 @@ public class ProjectList
     }
     return null;
   }
-
+// vi har en metode i project der hedder getprojectname har ikke kigget grundigt på den men eventuelt
+  // er det ikke den samme metode?
   public Project getProjectByProjectName(String projectName){
     for (int i = 0; i < projects.size(); i++)
     {

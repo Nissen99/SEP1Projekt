@@ -94,17 +94,17 @@ public class Requirement implements Serializable
   {
     return userStory;
   }
-
+  //bliver også brugt i project eventuelt skal det slettes i project eller her.
   public int getRequirementEstimatedHours()
   {
     return requirementEstimatedHours;
   }
-
+  //bliver også brugt i project eventuelt skal det slettes i project eller her.
   public int getRequirementHoursWorked()
   {
     return requirementHoursWorked;
   }
-
+//bliver også brugt i project eventuelt skal det slettes i project eller her.
   public String getRequirementStatus()
   {
     return requirementStatus;
