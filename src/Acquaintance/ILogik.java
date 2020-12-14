@@ -5,9 +5,9 @@ import LogikLag.*;
 import java.util.ArrayList;
 
 public interface ILogik {
-    int getMonth();
-    int getDay();
-    int getYear();
+  void createProject(String projectName, int projectEstimatedHours,
+      Client client, TeamMemberList teamMemberList, MyDate projectDeadline);
+    String getDate();
     void setRole(String role);
     Employee copy();
     String getRole();

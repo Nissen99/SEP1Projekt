@@ -13,19 +13,9 @@ public class MyDate implements Serializable
     set(day, month, year);
   }
 
-  public int getDay()
-  {
-    return day;
-  }
 
-  public int getMonth()
-  {
-    return month;
-  }
-
-  public int getYear()
-  {
-    return year;
+  public String getDate(){
+    return this.day + ":" + this.month + ":" + this.year;
   }
 
   public void set(int day, int month, int year){
@@ -33,6 +23,7 @@ public class MyDate implements Serializable
     this.month = month;
     this.year = year;
   }
+
 
   public MyDate copy(){
     return new MyDate(day, month, year);

@@ -47,7 +47,7 @@ public class Employee implements IEmployee,  Serializable
   public Employee copy()
   {
 
-    Employee placeHolder = new Employee(this.employeeName); //Måske virker det her ??
+    Employee placeHolder = new Employee(this.employeeName);
     placeHolder.setRole(this.role);
     placeHolder.employeeID = this.employeeID;
     placeHolder.numberOfProjects = this.numberOfProjects;

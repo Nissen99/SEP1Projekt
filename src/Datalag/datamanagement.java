@@ -1,5 +1,10 @@
 package Datalag;
 
+import LogikLag.Employee;
+import LogikLag.EmployeeList;
+import LogikLag.Project;
+import LogikLag.ProjectList;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -23,10 +28,50 @@ public class datamanagement implements Serializable {
         return employees;
     }
 */
-    public void readEmployee() throws FileNotFoundException {
-        Scanner scanner = new Scanner(EMPLOYEE_FILE);
-        System.out.println(scanner.nextLine());
+
+
+    public ProjectList readProjects() throws FileNotFoundException
+    {
+
+        Scanner scanner = new Scanner(PROJECT_FILE);
+        ProjectList projectList = new ProjectList();
+        String s;
+
+        while (scanner.hasNext()){
+            s = scanner.nextLine();
+
+            String[] split = s.split(", ");
+
+            Employee other = new Employee();
+            projectList.(other);
+
+        }
+        return projectList;
     }
+
+
+
+
+    public EmployeeList readEmployees() throws FileNotFoundException
+    {
+
+             Scanner scanner = new Scanner(EMPLOYEE_FILE);
+        EmployeeList employeeList = new EmployeeList();
+               String s;
+            while (scanner.hasNext()){
+                s = scanner.nextLine();
+
+                String[] split = s.split(", ");
+
+                Employee other = new Employee();
+                list.(other);
+
+            }
+            return employeeList;
+        }
+
+
+
 
 /*
     public void saveScoreFile(Player player, GameTimer gameTimer) {
@@ -55,14 +100,19 @@ public class datamanagement implements Serializable {
         }
     }
 
-    public Employee loadEmployee() {
-        Employee employee = null;
+    public EmployeeList loadEmployee() {
+
+        EmployeeList employees;
         try {
             FileInputStream inputStream = new FileInputStream(EMPLOYEE_FILE);
             ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
-            employee = (Employee) loadEmployee.readObject();
+
+            employees = (Employee) loadEmployee.readObject();
             inputStream.close();
             loadEmployee.close();
+
+
+
         } catch (FileNotFoundException ex) {
             Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
@@ -72,4 +122,4 @@ public class datamanagement implements Serializable {
         }
         return employee;
     }
-}
+

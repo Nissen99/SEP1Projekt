@@ -60,6 +60,7 @@ public class Project implements Serializable
     }
   }
 
+
   //Der kan kun være 1 product owner/scrum master, så hvis en ny bliver sat
   // laver vi den nuværende til "team member" igen
   public void appointScrumMaster(int employeeID)

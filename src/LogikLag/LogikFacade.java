@@ -17,27 +17,22 @@ public class LogikFacade implements ILogik {
         this.employee = employee;
     }
 
-
     @Override
-    public int getMonth() {
-        return date.getMonth();
+    public void createProject(String projectName, int projectEstimatedHours,
+        Client client, TeamMemberList teamMemberList, MyDate projectDeadline){
+        Project project = new Project(projectName, projectEstimatedHours, client, teamMemberList, projectDeadline);
     }
 
-    @Override
-    public int getYear() {
-        return date.getYear();
-    }
-
-    @Override
-    public int getDay() {
-        return date.getDay();
+    @Override public String getDate()
+    {
+        return date.getDate();
     }
 
     // denne her skal skrives om, da metoden ikke bliver override, skal der kigges på
     // fordi det er void metoden. Eventuelt laves om til en string.
     @Override
     public void setRole(String role) {
-        return employee.setRole();
+         employee.setRole(role);
     }
 
     // denne her skal skrives om, da metoden ikke bliver override, skal der kigges på
@@ -70,11 +65,11 @@ public class LogikFacade implements ILogik {
 }
     @Override
     public void addRequirement(Requirement requirement) {
-        return project.addRequirement();
+         project.addRequirement(requirement);
     }
     @Override
     public void removeRequirement(int requirementID) {
-        return project.getRequirement(requirementID);
+        project.getRequirement(requirementID);
     }
 
     @Override
