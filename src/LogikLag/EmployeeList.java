@@ -1,10 +1,11 @@
 package LogikLag;
 
+import java.io.Serializable;
 import java.util.ArrayList;
-
-public class EmployeeList
+public class EmployeeList implements Serializable
 {
   private ArrayList<Employee> employees;
+  private Object Exception;
 
 
   public EmployeeList(){
@@ -12,13 +13,14 @@ public class EmployeeList
   }
 
   public Employee getEmployee(int employeeID){
+
     for (int i = 0; i < employees.size(); i++)
     {
       if (employees.get(i).getEmployeeID() == employeeID){
         return employees.get(i);
       }
     }
-    return null; //Throw something
+  return null;  // kunne laves som en exception, men pågrund af manglende tid blev dette fravalgt.
   }
 
 
@@ -40,4 +42,7 @@ public class EmployeeList
     return employees;
   }
 
+public String toString() {
+  return "bøgse";
+}
 }

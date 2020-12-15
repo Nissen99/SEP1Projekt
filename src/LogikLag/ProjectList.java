@@ -1,8 +1,9 @@
 package LogikLag;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ProjectList
+public class ProjectList implements Serializable
 {
   private ArrayList<Project> projects;
 

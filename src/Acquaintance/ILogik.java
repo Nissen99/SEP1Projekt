@@ -5,6 +5,7 @@ import LogikLag.*;
 import java.util.ArrayList;
 
 public interface ILogik {
+  void injectData(IData _data);
   void createProject(String projectName, int projectEstimatedHours,
       Client client, TeamMemberList teamMemberList, MyDate projectDeadline);
     String getDate();

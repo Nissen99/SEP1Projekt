@@ -9,12 +9,9 @@ public class LogikFacade implements ILogik {
     private Task task;
     private Project project;
     private Employee employee;
+    private IData data;
+    public LogikFacade() {
 
-    public LogikFacade(MyDate date, Task task, Project project) {
-        this.date = date;
-        this.task = task;
-        this.project = project;
-        this.employee = employee;
     }
 
     @Override
@@ -27,7 +24,10 @@ public class LogikFacade implements ILogik {
     {
         return date.getDate();
     }
-
+    @Override
+    public void injectData(IData _data) {
+        data = data;
+    }
     // denne her skal skrives om, da metoden ikke bliver override, skal der kigges på
     // fordi det er void metoden. Eventuelt laves om til en string.
     @Override

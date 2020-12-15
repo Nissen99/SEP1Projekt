@@ -1,7 +1,10 @@
 package Acquaintance;
 
-public interface IGUI {
+import javafx.stage.Stage;
 
+public interface IGUI {
+void injectLogik(ILogik logik);
+    void start();
 
 
 }

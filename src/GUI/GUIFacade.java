@@ -1,5 +1,8 @@
 package GUI;
 
+import Acquaintance.IData;
+import Acquaintance.IGUI;
+import Acquaintance.ILogik;
 import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,17 +10,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class GUIFacade extends Application
+public class GUIFacade extends Application implements IGUI
 {
 
   private static GUIFacade guiFacade;
-
+  public static ILogik logik;
 
   public static GUIFacade getInstance(){
     return guiFacade;
   }
 
-@Override
+    @Override
   public void start(Stage stage) throws Exception
   {
       FXMLLoader loader = new FXMLLoader();
@@ -33,6 +36,14 @@ public class GUIFacade extends Application
     public static void main(String[] args) {
         launch(args);
 
+    }
+    @Override
+    public void injectLogik(ILogik _logik) {
+      logik = logik;
+    }
+    @Override
+    public void start() {
+      launch();
     }
 }
 
