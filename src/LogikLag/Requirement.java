@@ -3,7 +3,7 @@ package LogikLag;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Requirement implements Serializable
+public class Requirement extends IDGen implements Serializable
 {
   private MyDate requirementDeadline;
   private ArrayList<Task> tasks;
@@ -27,11 +27,21 @@ public class Requirement implements Serializable
     tasks = new ArrayList<>();
     requirementStatus = "Not started";
 
-    //Something adding tasks
+    this.requirementStatus = generateRequirementID();
+
   }
 
   public void updateRequirementStatus(ArrayList<String> taskStatus){
-    //TO DO
+    for (int i = 0; i < tasks.size(); i++)
+    {
+      if (tasks.get(i).getTaskStatus().equals("startet")){
+        this.requirementStatus = "startet";
+      }
+    }
+
+    if (tasks.stream().allMatch(task -> task.getTaskStatus().equals("afsluttet")));{
+      this.requirementStatus = "afsluttet";
+    }
   }
 
 

@@ -2,7 +2,7 @@ package LogikLag;
 
 import java.io.Serializable;
 
-public class Task implements Serializable
+public class Task extends IDGen implements Serializable
 {
   private MyDate taskDeadline;
   private int taskID;
@@ -27,7 +27,8 @@ public class Task implements Serializable
     taskHoursWorked = 0;
     taskStatus = "Not started";
 
-    //ID generator
+    this.taskID = generateTaskID();
+
   }
 
   public MyDate getTaskDeadline()
