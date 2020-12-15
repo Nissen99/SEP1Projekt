@@ -12,15 +12,17 @@ public class Task implements Serializable
   private int taskEstimatedHours;
   private String taskStatus;
   private Employee responsibleTeamMember;
+  private String taskText;
 
 
-  public Task(String taskName, String taskDescription, int taskEstimatedHours, MyDate taskDeadline, Employee responsibleTeamMember){
+  public Task(String taskName, String taskDescription, int taskEstimatedHours, MyDate taskDeadline, Employee responsibleTeamMember, String taskText){
 
     this.taskName = taskName;
     this.taskDescription = taskDescription;
     this.taskEstimatedHours = taskEstimatedHours;
     this.taskDeadline = taskDeadline.copy();
     this.responsibleTeamMember = responsibleTeamMember;
+    this.taskText = taskText;
 
     taskHoursWorked = 0;
     taskStatus = "Not started";

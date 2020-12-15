@@ -4,17 +4,19 @@ import Acquaintance.IEmployee;
 
 import java.io.Serializable;
 
-public class Employee implements IEmployee,  Serializable
+public class Employee extends IDGen implements IEmployee, Serializable
 {
   private int employeeID;
   private String employeeName;
   private int numberOfProjects;
   private String role;
 
+
   public Employee(String employeeName)
   {
     this.employeeName = employeeName;
     this.role = "employee";
+    this.employeeID = generateEmployeeID();
   }
 
   public void setRole(String role){
