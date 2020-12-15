@@ -41,9 +41,9 @@ public class datamanagement implements Serializable {
             s = scanner.nextLine();
 
             String[] split = s.split(", ");
-
-            Employee other = new Employee();
-            projectList.(other);
+//
+//            Employee other = new Employee();
+//            projectList.(other);
 
         }
         return projectList;
@@ -62,13 +62,13 @@ public class datamanagement implements Serializable {
                 s = scanner.nextLine();
 
                 String[] split = s.split(", ");
-
-                Employee other = new Employee();
-                list.(other);
+//
+//                Employee other = new Employee();
+//                list.(other);
 
             }
             return employeeList;
-        }
+        }}
 
 
 
@@ -86,40 +86,41 @@ public class datamanagement implements Serializable {
         }
     }
 */
-    public void WritetoFile(Employee employee) {
-        try {
-            FileOutputStream outputStream = new FileOutputStream(EMPLOYEE_FILE);
-            ObjectOutputStream WriteToFileStream =  new ObjectOutputStream(outputStream);
-            WriteToFileStream.writeObject(employee);
-            outputStream.close();
-            WriteToFileStream.close();
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-
-    public EmployeeList loadEmployee() {
-
-        EmployeeList employees;
-        try {
-            FileInputStream inputStream = new FileInputStream(EMPLOYEE_FILE);
-            ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
-
-            employees = (Employee) loadEmployee.readObject();
-            inputStream.close();
-            loadEmployee.close();
-
-
-
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException ex) {
-            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return employee;
-    }
-
+//    public void WritetoFile(Employee employee) {
+//        try {
+//            FileOutputStream outputStream = new FileOutputStream(EMPLOYEE_FILE);
+//            ObjectOutputStream WriteToFileStream =  new ObjectOutputStream(outputStream);
+//            WriteToFileStream.writeObject(employee);
+//            outputStream.close();
+//            WriteToFileStream.close();
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//    }
+//
+//    public EmployeeList loadEmployee() {
+//
+//        EmployeeList employees;
+//        try {
+//            FileInputStream inputStream = new FileInputStream(EMPLOYEE_FILE);
+//            ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
+//
+//           // employees = (Employee) loadEmployee.readObject();
+//            inputStream.close();
+//            loadEmployee.close();
+//
+//
+//
+//        } catch (FileNotFoundException ex) {
+//            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IOException ex) {
+//            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (ClassNotFoundException ex) {
+//            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//      //  return employee;
+//        return;
+//    }
+//

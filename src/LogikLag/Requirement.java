@@ -27,7 +27,7 @@ public class Requirement extends IDGen implements Serializable
     tasks = new ArrayList<>();
     requirementStatus = "Not started";
 
-    this.requirementStatus = generateRequirementID();
+    this.requirementID = generateRequirementID();
 
   }
 

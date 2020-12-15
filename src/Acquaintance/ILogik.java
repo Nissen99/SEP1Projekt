@@ -29,9 +29,9 @@ public interface ILogik {
     int getProjectHoursWorked();
     String getProjectStatus();
     ArrayList<Project> getProjectByStatus(String status);
-    Project getProjectByProjectClient(String clientName);
+  //  Project getProjectByProjectClient(String clientName);
     Project getProjectByTeamMemberID(int teamMemberID);
-    Project getProjectByProjectName(String projectName);
+  //  Project getProjectByProjectName(String projectName);
     Project getProjectByProjectClient(String clientName);
     void updateRequirementStatus(ArrayList<String> taskStatus);
     void addTask(Task task);
