@@ -19,7 +19,7 @@ public class GUIFacade extends Application
 @Override
   public void start(Stage stage) throws Exception
   {
-      Parent root = FXMLLoader.load(getClass().getResource("Student.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
       Scene scene = new Scene(root);
       stage.setResizable(true);
       stage.setScene(scene);

@@ -1,0 +1,74 @@
+
+#body{
+    -fx-background-color: lightgray;
+}
+
+.button{
+    -fx-font-weight: bold;
+    -fx-background-color: gray;
+    -fx-text-fill: white;
+    
+     -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+    
+    -fx-background-radius: 7px;
+    
+}
+
+#opretetMedarbejder:hover{
+    -fx-background-color: lawngreen;
+    
+}
+
+#startSide{
+    -fx-background-image: url(logo.png);
+    
+    -fx-background-size: contain;
+    -fx-background-repeat: no-repeat;
+}
+
+#opretProjekt{
+    -fx-font-size: 18;   
+}
+
+.titleLabel{
+    -fx-font-weight: bold;
+    -fx-font-size: 14;
+}
+
+.normalLabel{
+    -fx-font-size: 14;
+}
+
+#projectTeam {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+}
+
+#kravKnap{
+        -fx-font-size: 16;   
+}
+
+.button:hover{
+    -fx-background-color: orange;
+}
+
+.button:pressed{
+    -fx-border-color: white;
+}
+
+
+#findProjectKnap{
+    -fx-font-size: 10;
+}
+
+
+.opretProjekt{
+    background-color: darkred
+
+}
+
+
+
+
