@@ -15,7 +15,7 @@ import java.io.IOException;
 public class ControllerFrontPage
 {
 
-  @FXML public Button switcher;
+  @FXML private Button switcher;
   private ViewHandlerOne whatever;
   private GUIFacade guiFacade;
   private Region root;
@@ -27,19 +27,18 @@ public class ControllerFrontPage
     this.root = root;
   }
 
+
+
   @FXML
-  public void switchScene(ActionEvent event) throws IOException
-  {
-    if(event.getSource() == switcher){
+  public void switchScene(javafx.event.ActionEvent actionEvent) throws IOException {
     Parent root = FXMLLoader.load(getClass().getResource("test123.fxml"));
 
     Scene scene = new Scene(root);
 
-    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     stage.setResizable(true);
     stage.setScene(scene);
     stage.show();
-  }
   }
 
 //    try

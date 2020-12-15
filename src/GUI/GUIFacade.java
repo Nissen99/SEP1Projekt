@@ -1,11 +1,12 @@
 package GUI;
 
+import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class GUIFacade
+public class GUIFacade extends Application
 {
 
   private static GUIFacade guiFacade;
@@ -15,17 +16,23 @@ public class GUIFacade
     return guiFacade;
   }
 
-
+@Override
   public void start(Stage stage) throws Exception
   {
-    Parent p = FXMLLoader.load(getClass().getResource("Student.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("Student.fxml"));
+      Scene scene = new Scene(root);
+      stage.setResizable(true);
+      stage.setScene(scene);
+      stage.show();
+}
 
-  Scene scene = new Scene(p);
-        scene.setFill(javafx.scene.paint.Color.TRANSPARENT);
-        stage.setScene(scene);
-        stage.show();
+
+    public static void main(String[] args) {
+        launch(args);
+
+    }
 }
 
 
 
-}
+
