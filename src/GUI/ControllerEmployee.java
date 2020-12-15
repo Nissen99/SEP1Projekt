@@ -1,6 +1,5 @@
 package GUI;
 import LogikLag.Employee;
-import LogikLag.Employee;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -29,7 +28,9 @@ public class ControllerEmployee
 
     public void setModel(Model model){
     this.model = model;
+
   }
+
 
   public void opretEmployee(){
     System.out.println("Employee du bøgse");

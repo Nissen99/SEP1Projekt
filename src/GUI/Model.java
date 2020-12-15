@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Model {
-
   private ArrayList<Employee> list = new ArrayList<>();
 
   public ArrayList<Employee> getAllStudentsFromFile()
@@ -17,7 +16,7 @@ public class Model {
     try
     {
       in = new Scanner(new File(
-          "C:\\Users\\Mikkel\\IdeaProjects\\JavaFXSEP\\Projects\\Students.txt"));
+          "C:\\Users\\Antonio\\Documents\\GitHub\\SEP1Projekt\\src\\GUI\\Students.txt"));
     }
     catch (FileNotFoundException e)
     {

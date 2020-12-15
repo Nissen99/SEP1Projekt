@@ -37,10 +37,17 @@ public class ControllerStartSide implements Initializable
 
     public void ChangeScene(javafx.event.ActionEvent actionEvent) throws IOException {
         if(actionEvent.getSource() == medarbejdereKnap) {
-            Parent nextView = FXMLLoader.load(getClass().getResource("EmployeeUI.fxml"));
-            Scene newScene = new Scene(nextView);
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(newScene);
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("EmployeeUI.fxml"));
+            Parent root = loader.load();
+            Model model = new Model();
+            ControllerEmployee controller = loader.getController();
+            controller.setModel(model);
+            Stage primaryStage = new Stage();
+            Scene scene = new Scene(root, 1000, 650);
+            primaryStage.setScene(scene);
+            primaryStage.show();
+            scene.getStylesheets().add("style.css");
 
     }  else if (actionEvent.getSource() == projekterKnap) {
             Parent nextView = FXMLLoader.load(getClass().getResource("ProjectUI.fxml"));
