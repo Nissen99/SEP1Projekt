@@ -3,7 +3,6 @@ package GUI;
 import javafx.application.Application;
 import javafx.stage.Stage;
 
-
 public class GUIMain extends Application
 {
 
@@ -11,7 +10,6 @@ public class GUIMain extends Application
   {
 
 GUIFacade facade = new GUIFacade();
-ViewHandlerOne viewHandler = new ViewHandlerOne(facade);
 facade.start(primaryStage);
 
 

@@ -16,8 +16,8 @@
         </columns>
       </TableView>
       <Button layoutX="149.0" layoutY="8.0" mnemonicParsing="false" text="Søg" />
-      <Button fx:id="remove" layoutY="83.0" mnemonicParsing="false" onAction="#switchScene" text="Remove" />
-      <Button layoutX="14.0" layoutY="151.0" mnemonicParsing="false" onAction="#switchScene" text="Add Student" />
+      <Button fx:id="remove" layoutY="83.0" mnemonicParsing="false"  text="Remove" />
+      <Button fx:id="switcher" layoutX="14.0" layoutY="151.0" mnemonicParsing="false" text="Add Student" onAction="#switchScene"/>
       <TextField layoutY="8.0" />
    </children>
 </AnchorPane>

@@ -18,7 +18,7 @@ public class GUIFacade
 
   public void start(Stage stage) throws Exception
   {
-    Parent p = FXMLLoader.load(getClass().getResource("MainView.fxml"));
+    Parent p = FXMLLoader.load(getClass().getResource("Student.fxml"));
 
   Scene scene = new Scene(p);
         scene.setFill(javafx.scene.paint.Color.TRANSPARENT);
