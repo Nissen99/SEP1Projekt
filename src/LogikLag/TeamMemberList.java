@@ -1,8 +1,9 @@
 package LogikLag;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class TeamMemberList
+public class TeamMemberList implements Serializable
 {
   private ArrayList<Employee> employees;
 

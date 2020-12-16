@@ -3,6 +3,7 @@ import LogikLag.Employee;
 import com.sun.webkit.Timer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -27,21 +28,30 @@ public class ControllerEmployee implements Initializable
   @FXML public TableColumn<String, Integer> tableColumnEmployeeID;
   @FXML public TableColumn<Employee, String> tableColumnEmployeeName;
   @FXML public TableView tableViewEmployee;
+  @FXML
+  public Button findMedarbejderKnap;
+
   private Model model;
   @FXML public Button return_button;
   @FXML
   public Label nameLabel;
   @FXML
   public Label employeeIDLabel;
+  @FXML
+  public Button opretMedarbejder;
 
     public void setModel(Model model){
     this.model = model;
 
   }
 
-
-  public void opretEmployee(){
+  @FXML
+  public void opretEmployee(ActionEvent actionEvent) throws IOException {
     System.out.println("Employee du bøgse");
+    Parent nextView = FXMLLoader.load(getClass().getResource("OpretMedarbejder.fxml"));
+    Scene newScene = new Scene(nextView);
+    Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+    stage.setScene(newScene);
     //  viewHandler.closeView();
     // model.opretProjekt();
   }

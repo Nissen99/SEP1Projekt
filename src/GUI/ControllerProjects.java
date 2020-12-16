@@ -1,4 +1,5 @@
 package GUI;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,18 +15,22 @@ public class ControllerProjects
 {
 @FXML
 private Button return_btn_return;
+@FXML
+private Button opretProjekt;
 
 
 //  public void setModel(Model model){
 //  this.model = model;
 //}
+@FXML
+public void opretProjekt(ActionEvent event) throws IOException {
+    System.out.println("fuck du bøgse");
+        Parent nextView = FXMLLoader.load(getClass().getResource("OpretProjekt.fxml"));
+        Scene newScene = new Scene(nextView);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(newScene);
 
-public void opretProjekt(){
-  System.out.println("fuck du bøgse");
-//  viewHandler.closeView();
- // model.opretProjekt();
 }
-
 public void findProjekt(){
   System.out.println("Fuck det bøgse");
 // model.findProjekt
