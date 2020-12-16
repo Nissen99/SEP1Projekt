@@ -109,11 +109,11 @@
                   <Insets left="10.0" top="10.0" />
                </VBox.margin>
             </Label>
-            <TableView prefHeight="247.0" prefWidth="479.0">
+            <TableView fx:id="employeeProjectTableView" prefHeight="247.0" prefWidth="479.0">
                <columns>
-                  <TableColumn prefWidth="75.0" text="ProjectID" />
+                  <TableColumn fx:id="employeeTeableCounmProjectID" prefWidth="75.0" text="ProjectID" />
                   <TableColumn prefWidth="93.0" text="Rolle" />
-                  <TableColumn prefWidth="310.0" text="Project navn" />
+                  <TableColumn fx:id="employeeTableCounmProjectName" prefWidth="310.0" text="Project navn" />
                </columns>
                <VBox.margin>
                   <Insets />

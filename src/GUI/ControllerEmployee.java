@@ -1,5 +1,6 @@
 package GUI;
 import LogikLag.Employee;
+import LogikLag.Project;
 import com.sun.webkit.Timer;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -30,6 +31,9 @@ public class ControllerEmployee implements Initializable
   @FXML public TableView tableViewEmployee;
   @FXML
   public Button findMedarbejderKnap;
+  @FXML public TableColumn<String, Integer> employeeTeableCounmProjectID;
+  @FXML public TableColumn<Project, String> employeeTableCounmProjectName;
+  @FXML public TableView employeeProjectTableView;
 
   private Model model;
   @FXML public Button return_button;
@@ -72,7 +76,7 @@ public class ControllerEmployee implements Initializable
 
   public void reset()
   {
-    ObservableList<Employee> list2 = FXCollections.observableList(model.getAllStudentsFromFile());
+//    ObservableList<Employee> list2 = FXCollections.observableList(model.getAllStudentsFromFile());
     tableViewEmployee.getItems().addAll(model.getAllStudentsFromFile());
   }
 
@@ -106,6 +110,9 @@ public class ControllerEmployee implements Initializable
       nameLabel.setText(person.getEmployeeName());
       employeeIDLabel.setText(String.valueOf(person.getEmployeeID()));
     }
+    employeeProjectTableView.getItems().addAll(model.getAllStudentsFromFile());
+    employeeTeableCounmProjectID.setCellValueFactory(new PropertyValueFactory("projectID"));
+    employeeTableCounmProjectName.setCellValueFactory(new PropertyValueFactory("projectName"));
   }
 
   @Override

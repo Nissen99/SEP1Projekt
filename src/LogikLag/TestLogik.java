@@ -1,8 +1,7 @@
 package LogikLag;
 
 import Acquaintance.IData;
-import Acquaintance.ILogik;
-import Datalag.DataManagement;
+import Datalag.datamanagement;
 
 public class TestLogik
 {
@@ -41,7 +40,7 @@ public class TestLogik
     teamMemberList.addEmployee(mikkel5);
 
 
-    DataManagement data = new DataManagement();
+    datamanagement data = new datamanagement();
     data.writeToFile(projectList);
     mikkel.setRole("Whatever");
       System.out.println(data.loadProject());

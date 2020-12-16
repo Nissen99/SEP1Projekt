@@ -8,10 +8,10 @@ import java.io.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class DataManagement implements Serializable, IData {
+public class datamanagement implements Serializable, IData {
 
 
-    public DataManagement() {
+    public datamanagement() {
     }
 
     File employeeFile = new File("EmployeeFile" + ".bin");
@@ -29,9 +29,9 @@ public class DataManagement implements Serializable, IData {
             WriteToFileStream.close();
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(DataManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(DataManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -47,9 +47,9 @@ public class DataManagement implements Serializable, IData {
             WriteToFileStream.close();
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(DataManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(DataManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -67,11 +67,11 @@ public class DataManagement implements Serializable, IData {
 
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(DataManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(DataManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DataManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         }
         return employees;
     }
@@ -91,11 +91,11 @@ public class DataManagement implements Serializable, IData {
 
 
         } catch (FileNotFoundException ex) {
-            Logger.getLogger(DataManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IOException ex) {
-            Logger.getLogger(DataManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(DataManagement.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(datamanagement.class.getName()).log(Level.SEVERE, null, ex);
         }
         return projects;
     }

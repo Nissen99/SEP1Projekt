@@ -2,9 +2,10 @@ package GUI;
 
 import LogikLag.Employee;
 import LogikLag.EmployeeList;
+import LogikLag.Project;
+import LogikLag.ProjectList;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -12,37 +13,72 @@ public class Model {
 
   private ArrayList<Employee> list = new ArrayList<>();
 
+
+
+
+
   public ArrayList<Employee> getAllStudentsFromFile()
-
-
   {
-    Scanner in = null;
+    EmployeeList employeeList = null;
     try
     {
-      in = new Scanner(new File(
-              "C:\\Users\\Antonio\\Documents\\GitHub\\SEP1Projekt\\src\\GUI\\Students.txt"));
+      FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\mikke\\IdeaProjects\\SEP1Projekt\\EmployeeFile.bin"));
+      ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
+
+      employeeList = (EmployeeList) loadEmployee.readObject();
+      inputStream.close();
+      loadEmployee.close();
     }
     catch (FileNotFoundException e)
     {
       e.printStackTrace();
     }
-
-    EmployeeList employeeList = new EmployeeList();
-
-    String s;
-
-    while (in.hasNext())
+    catch (IOException e)
     {
-
-      s = in.nextLine();
-
-      String[] split = s.split(", ");
-
-      Employee other = new Employee(split[2]);
-
-      employeeList.addEmployee(other);
-
+      e.printStackTrace();
     }
-    list = employeeList.getAllEmployees();
-    return list;
-  }}
+    catch (ClassNotFoundException e)
+    {
+      e.printStackTrace();
+    }
+
+   ArrayList<Employee> employeeArrayList = employeeList.getAllEmployees();
+
+
+    return employeeArrayList;
+  }
+
+  public ArrayList<Project> getAllProjectsFromFile()
+  {
+    ProjectList projectList = null;
+    try
+    {
+      FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\mikke\\IdeaProjects\\SEP1Projekt\\ProjectFile.bin"));
+      ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
+
+      projectList = (ProjectList) loadEmployee.readObject();
+      inputStream.close();
+      loadEmployee.close();
+    }
+    catch (FileNotFoundException e)
+    {
+      e.printStackTrace();
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+    catch (ClassNotFoundException e)
+    {
+      e.printStackTrace();
+    }
+
+    ArrayList<Project> projectArrayList = projectList.getProjects();
+
+
+    return projectArrayList;
+  }
+
+
+
+}
