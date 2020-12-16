@@ -3,6 +3,7 @@ import Acquaintance.ILogik;
 import LogikLag.Employee;
 import LogikLag.LogikFacade;
 import LogikLag.Project;
+import LogikLag.ProjectList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -45,6 +46,7 @@ public class ControllerProjects implements Initializable
 //  public void setModel(Model model){
 //  this.model = model;
 //}
+
 @FXML
 public void opretProjekt(ActionEvent event) throws IOException {
     System.out.println("fuck du bøgse");
@@ -52,6 +54,7 @@ public void opretProjekt(ActionEvent event) throws IOException {
         Scene newScene = new Scene(nextView);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(newScene);
+
 
 }
 public void findProjekt(){

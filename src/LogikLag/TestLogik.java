@@ -12,6 +12,7 @@ public class TestLogik
     Employee mikkel2 = new Employee("Mikkel2");
     Employee mikkel3 = new Employee("Mikkel3");
     Employee mikkel4 = new Employee("Mikkel4");
+
     Employee mikkel5 = new Employee("Mikkel5");
 
    EmployeeList teamMemberList = new EmployeeList();

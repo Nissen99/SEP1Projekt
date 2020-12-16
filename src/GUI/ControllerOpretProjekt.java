@@ -37,6 +37,11 @@ public class ControllerOpretProjekt implements Initializable {
   private LogikFacade logikFacade = new LogikFacade();
 
 
+
+
+
+
+
   public void ChangeScene(javafx.event.ActionEvent actionEvent) throws IOException {
     Parent nextView = FXMLLoader.load(getClass().getResource("ProjectUI.fxml"));
     Scene newScene = new Scene(nextView);

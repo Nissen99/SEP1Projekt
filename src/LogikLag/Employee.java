@@ -16,6 +16,11 @@ public class Employee extends IDGen
 
   public Employee(String employeeName)
   {
+    opretEmployee(employeeName);
+  }
+
+
+  public void opretEmployee(String employeeName){
     this.employeeName = employeeName;
     this.role = "employee";
     this.employeeID = generateEmployeeID();

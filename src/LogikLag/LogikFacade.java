@@ -18,7 +18,7 @@ public class LogikFacade implements ILogik {
     }
     @Override
    public void  writeToFile(EmployeeList employees) {
-        writeToFile(employees);
+        datamanagement.writeToFile(employees);
    }
 
     @Override
@@ -26,9 +26,15 @@ public class LogikFacade implements ILogik {
          writeToFile(projectList);
 
     }
+
+    @Override
+    public void opretEmployee(String employeeName){
+      opretEmployee(employeeName);
+  }
+
     @Override
     public EmployeeList loadEmployee() {
-        return loadEmployee();
+        return datamanagement.loadEmployee();
     }
     @Override
     public ProjectList loadProject() {

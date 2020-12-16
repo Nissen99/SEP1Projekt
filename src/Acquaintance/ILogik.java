@@ -21,5 +21,6 @@ public interface ILogik {
     ArrayList<Project> getAllProjectsFromFile();
     ArrayList<Project> getAllProjectsFromFile(Employee employee);
     ArrayList<Employee> getAllTeamMembersFromProject(Project project);
+    void opretEmployee(String employeeName);
 }
 

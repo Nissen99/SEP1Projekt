@@ -89,6 +89,16 @@
                   <Insets />
                </HBox.margin>
             </Button>
+            <Label text="How many selected:">
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+            <Label fx:id="opretProjectHowManySelectedLabel" text="0">
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Label>
          </children>
       </HBox>
       <HBox prefHeight="70.0" prefWidth="600.0">

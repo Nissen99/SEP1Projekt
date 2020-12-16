@@ -46,6 +46,7 @@ public class ProjectList implements Serializable
     return projects.size();
   }
 
+
   public ArrayList<Project> getProjectByStatus(String status){
     ArrayList<Project> placeHolder = new ArrayList<>();
 

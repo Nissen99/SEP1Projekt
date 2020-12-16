@@ -36,7 +36,7 @@
                         <Insets left="5.0" top="5.0" />
                      </HBox.margin>
                   </TextField>
-                  <Button fx:id="findMedarbejderKnap" mnemonicParsing="false" onAction="#findEmployee" styleClass="button" text="Søg efter medarbejder">
+                  <Button fx:id="findMedarbejderKnap" mnemonicParsing="false" styleClass="button" text="Søg efter medarbejder">
                      <HBox.margin>
                         <Insets left="1.0" top="5.0" />
                      </HBox.margin>
@@ -119,7 +119,7 @@
                   <Insets />
                </VBox.margin>
             </TableView>
-            <Button fx:id="kravKnap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="50.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="125.0" style="-fx-font-size: 12; -fx-background-color: darkred;" text="Fjern medarbejder">
+            <Button fx:id="fjernMedarbejderKnap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="50.0" mnemonicParsing="false" onAction="#removeMedarbejder" prefHeight="60.0" prefWidth="125.0" style="-fx-font-size: 12; -fx-background-color: darkred;" text="Fjern medarbejder">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </VBox.margin>

@@ -1,4 +1,8 @@
 package GUI;
+import LogikLag.Employee;
+import LogikLag.EmployeeList;
+import LogikLag.LogikFacade;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -18,6 +22,7 @@ public class ControllerOpretMedarbejder implements Initializable
   public Button opretetMedarbejder;
   public Button Returnknap;
   public TextField textFieldMedArbejder;
+  private LogikFacade logikFacade = new LogikFacade();
 
 
 
@@ -32,6 +37,14 @@ public class ControllerOpretMedarbejder implements Initializable
 
     }
         }
+
+
+        public void opretMedarbejder() throws IOException
+        {
+      EmployeeList list = logikFacade.loadEmployee();
+      list.addEmployee(new Employee(textFieldMedArbejder.getText()));
+      logikFacade.writeToFile(list);
+    }
 
 
     @Override

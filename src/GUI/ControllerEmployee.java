@@ -42,6 +42,7 @@ public class ControllerEmployee implements Initializable
   public Label employeeIDLabel;
   @FXML
   public Button opretMedarbejder;
+  @FXML public Button fjernMedarbejderKnap;
   private Datalag.datamanagement data;
   private  ILogik logik;
   private GUIFacade gui;
@@ -64,16 +65,15 @@ public class ControllerEmployee implements Initializable
   }
 
 
-
-
-  public void findEmployee(){
-    System.out.println("Employee den bøgse");
-    // model.findProjekt
+  public void removeMedarbejder(){
+    EmployeeList list = logikFacade.datamanagement.loadEmployee();
+    Employee person =  (Employee) tableViewEmployee.getSelectionModel().getSelectedItem();
+    list.removeEmployee(person.getEmployeeID());
+    logikFacade.datamanagement.writeToFile(list);
+    tableViewEmployee.getItems().clear();
+    reset();
   }
 
-  public void fjernEmployee(){
-    System.out.println("Fjerner nok den man har markeret");
-  }
   @FXML
   public void reset()
   {
