@@ -48,8 +48,8 @@
             </HBox>
             <TableView fx:id="tableViewEmployee" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#displaySelected" prefHeight="500.0" prefWidth="480.0">
                <columns>
-                  <TableColumn fx:id="tableColumnEmployeeID" prefWidth="95.0" text="MedarbejderID" />
-                  <TableColumn fx:id="tableColumnEmployeeName" prefWidth="382.0" text="Navn" />
+                  <TableColumn fx:id="tableColumnEmployeeID" prefWidth="120.0" text="MedarbejderID" />
+                  <TableColumn fx:id="tableColumnEmployeeName" prefWidth="357.0" text="Navn" />
                </columns>
             </TableView>
          </children>
@@ -66,16 +66,11 @@
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
                   </Label>
-                  <Label fx:id="nameLabel" styleClass="normalLabel" text="Label">
+                  <Label fx:id="nameLabel" styleClass="normalLabel">
                      <HBox.margin>
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
                   </Label>
-                  <Button fx:id="return_button" layoutX="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="50.0" mnemonicParsing="false" onAction="#ChangeScene" prefHeight="75.0" prefWidth="125.0" style="-fx-font-size: 12;" text="return " textAlignment="JUSTIFY">
-                     <HBox.margin>
-                        <Insets left="250.0" />
-                     </HBox.margin>
-                  </Button>
                </children>
                <VBox.margin>
                   <Insets />
@@ -88,7 +83,7 @@
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
                   </Label>
-                  <Label styleClass="normalLabel" text="Label">
+                  <Label fx:id="employeeIDLabel" styleClass="normalLabel">
                      <HBox.margin>
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
@@ -97,12 +92,12 @@
             </HBox>
             <HBox prefHeight="50.0" prefWidth="484.0">
                <children>
-                  <Label styleClass="titleLabel" text="Kunde navn:">
+                  <Label styleClass="titleLabel">
                      <HBox.margin>
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
                   </Label>
-                  <Label styleClass="normalLabel" text="Label">
+                  <Label styleClass="normalLabel">
                      <HBox.margin>
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
@@ -127,6 +122,11 @@
             <Button fx:id="kravKnap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="50.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="125.0" style="-fx-font-size: 12; -fx-background-color: darkred;" text="Fjern medarbejder">
                <VBox.margin>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="return_button" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="50.0" mnemonicParsing="false" onAction="#ChangeScene" prefHeight="60.0" prefWidth="125.0" style="-fx-font-size: 12;" text="return " textAlignment="JUSTIFY">
+               <VBox.margin>
+                  <Insets left="10.0" />
                </VBox.margin>
             </Button>
          </children>

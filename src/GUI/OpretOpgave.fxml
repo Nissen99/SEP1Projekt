@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.DropdownButton?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
@@ -19,7 +18,7 @@
             <Label text="Opgave navn:" />
             <TextField>
                <HBox.margin>
-                  <Insets left="35.0" />
+                  <Insets left="67.0" />
                </HBox.margin>
             </TextField>
          </children>
@@ -32,7 +31,7 @@
             <Label text="Opgave beskrivelse:" />
             <TextArea prefHeight="200.0" prefWidth="200.0">
                <HBox.margin>
-                  <Insets left="5.0" />
+                  <Insets left="35.0" />
                </HBox.margin>
             </TextArea>
          </children>
@@ -45,7 +44,7 @@
             <Label text="Tids overslag:" />
             <TextField prefHeight="25.0" prefWidth="39.0">
                <HBox.margin>
-                  <Insets left="40.0" />
+                  <Insets left="68.0" />
                </HBox.margin></TextField>
          </children>
          <VBox.margin>
@@ -57,7 +56,7 @@
             <Label text="Deadline:" />
             <DatePicker>
                <HBox.margin>
-                  <Insets left="60.0" />
+                  <Insets left="91.0" />
                </HBox.margin>
             </DatePicker>
          </children>
@@ -70,17 +69,21 @@
             <Label text="Ansvarlig Team member">
                <HBox.margin>
                   <Insets left="10.0" />
-               </HBox.margin></Label>
-            <DropdownButton>
-               <items>
-                  <MenuItem text="Choice 1" />
-                  <MenuItem text="Choice 2" />
-                  <MenuItem text="Choice 3" />
-               </items>
-               <HBox.margin>
-                  <Insets left="10.0" />
                </HBox.margin>
-            </DropdownButton>
+            </Label>
+            <ComboBox fx:id="opretOpgaveCombobox" prefWidth="150.0">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <HBox.margin>
+                  <Insets left="13.0" />
+               </HBox.margin>
+            </ComboBox>
+            <Button fx:id="opretOpgaveAnsvarligTeamMenber" mnemonicParsing="false" onAction="#addTeamMember" style="-fx-background-color: green; -fx-border-style: none;" text="+">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
       <HBox prefHeight="100.0" prefWidth="333.0">

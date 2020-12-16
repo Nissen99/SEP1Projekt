@@ -32,18 +32,14 @@ public class GUIFacade extends Application implements IGUI
 
 }
 
-
-    public static void main(String[] args) {
-        launch(args);
-
-    }
     @Override
     public void injectLogik(ILogik _logik) {
       logik = logik;
     }
+
     @Override
-    public void start() {
-      launch();
+    public void start2() {
+        launch();
     }
 }
 
