@@ -14,7 +14,7 @@ public class Client implements Serializable
     this.clientName = clientName;
     this.clientEmail = clientEmail;
     this.clientPhoneNumber = clientPhoneNumber;
-    logikFacade;
+
   }
 
   public String getClientName()

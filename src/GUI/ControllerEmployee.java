@@ -1,7 +1,6 @@
 package GUI;
-import Acquaintance.IData;
-import LogikLag.Employee;
-import LogikLag.Project;
+import Acquaintance.*;
+import LogikLag.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,9 +15,10 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-
+import LogikLag.LogikFacade;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class ControllerEmployee implements Initializable
@@ -34,7 +34,7 @@ public class ControllerEmployee implements Initializable
   @FXML public TableView employeeProjectTableView;
   @FXML public TableColumn employeeRoleCounm;
 
-  private Model model;
+
   @FXML public Button return_button;
   @FXML
   public Label nameLabel;
@@ -42,17 +42,15 @@ public class ControllerEmployee implements Initializable
   public Label employeeIDLabel;
   @FXML
   public Button opretMedarbejder;
+  private Datalag.datamanagement data;
+  private  ILogik logik;
+  private GUIFacade gui;
+  private  LogikFacade logikFacade = new LogikFacade();
 
-  private IData data;
-  private GUIFacade guiFacade;
+  public void setlogik(ILogik logik) {
+  this.logik = logik;
+}
 
-
-
-
-    public void setModel(Model model){
-    this.model = model;
-
-  }
 
   @FXML
   public void opretEmployee(ActionEvent actionEvent) throws IOException {
@@ -76,11 +74,11 @@ public class ControllerEmployee implements Initializable
   public void fjernEmployee(){
     System.out.println("Fjerner nok den man har markeret");
   }
-
+  @FXML
   public void reset()
   {
 //    ObservableList<Employee> list2 = FXCollections.observableList(model.getAllStudentsFromFile());
-    tableViewEmployee.getItems().addAll(data.getAllEmployeesFromFile());
+    tableViewEmployee.getItems().addAll(logikFacade.datamanagement.getAllEmployeesFromFile());
   }
 
 
@@ -118,16 +116,13 @@ public class ControllerEmployee implements Initializable
       employeeIDLabel.setText(String.valueOf(person.getEmployeeID()));
     }
     employeeProjectTableView.getItems().clear(); //Clear når vi trykker på ny person, ellers ville det bare ligge oven på
-    employeeProjectTableView.getItems().addAll(model.getAllProjectsFromFile(person));
+    employeeProjectTableView.getItems().addAll(logikFacade.datamanagement.getAllProjectsFromFile(person));
     employeeTeableCounmProjectID.setCellValueFactory(new PropertyValueFactory("projectID"));
     employeeTableCounmProjectName.setCellValueFactory(new PropertyValueFactory("projectName"));
   }
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
-    GUIFacade guiFacade = new GUIFacade();
-    this.guiFacade= guiFacade;
-    guiFacade.
       setup();
       reset();
   }

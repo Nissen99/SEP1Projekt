@@ -17,7 +17,6 @@ public class ControllerStartSide implements Initializable
 
   public Button medarbejdereKnap;
   public Button projekterKnap;
-  private Model model;
 
 
 
@@ -27,9 +26,6 @@ public class ControllerStartSide implements Initializable
 //    model.skift("bøgse");
 //  }
 
-  public void setModel(Model model){
-    this.model = model;
-  }
 
 
 

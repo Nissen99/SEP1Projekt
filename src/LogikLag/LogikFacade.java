@@ -2,35 +2,55 @@ package LogikLag;
 import Acquaintance.*;
 
 import java.util.ArrayList;
-
+import Datalag.datamanagement;
 public class LogikFacade implements ILogik {
 
     private MyDate date;
     private Task task;
     private Project project;
     private Employee employee;
-
+    public datamanagement datamanagement;
     private static LogikFacade logikFacade;
-    private IData data;
-
-
-    public static LogikFacade getLogikFacade(){
-        return logikFacade;
-    }
-
-    public IData getData(){
-        return data;
-    }
-
-    public void setLogikFacade(IData data){
-        this.data = data;
-    }
 
 
     public LogikFacade() {
+        datamanagement =  new datamanagement();
+    }
+    @Override
+   public void  writeToFile(EmployeeList employees) {
+        writeToFile(employees);
+   }
+
+    @Override
+    public void writeToFile(ProjectList projectList) {
+         writeToFile(projectList);
 
     }
+    @Override
+    public EmployeeList loadEmployee() {
+        return loadEmployee();
+    }
+    @Override
+    public ProjectList loadProject() {
+        return  loadProject();
+    }
+    @Override
+    public ArrayList<Employee> getAllEmployeesFromFile() {
+        return getAllEmployeesFromFile();
+    }
+    @Override
+    public ArrayList<Project> getAllProjectsFromFile() {
+        return getAllProjectsFromFile();
+    }
+    @Override
+    public  ArrayList<Project> getAllProjectsFromFile(Employee employee) {
+        return getAllProjectsFromFile();
+    }
 
+    @Override
+    public ArrayList<Employee> getAllTeamMembersFromProject(Project project) {
+        return getAllTeamMembersFromProject(project);
+    }
 
 
     public void createProject(String projectName, int projectEstimatedHours,
@@ -41,10 +61,6 @@ public class LogikFacade implements ILogik {
     public String getDate()
     {
         return date.getDate();
-    }
-    @Override
-    public void injectData(IData data) {
-        this.data = data;
     }
 
     // denne her skal skrives om, da metoden ikke bliver override, skal der kigges på
@@ -61,6 +77,7 @@ public class LogikFacade implements ILogik {
     public String getRole() {
         return employee.getRole();
     }
+
 
     @Override
     public int getEmployeeID() {

@@ -6,8 +6,6 @@ import java.util.ArrayList;
 
 public interface ILogik {
 
-  void injectData(IData _data);
-
     int getEmployeeID();
     int getNumberOfProjects();
     int getProjectID();
@@ -15,7 +13,13 @@ public interface ILogik {
     Task getTasks(int taskID);
     Employee getResponsibleTeamMember();
     int getRequirementHoursWorked();
-
-
+    ProjectList loadProject();
+    EmployeeList loadEmployee();
+    void writeToFile(ProjectList projectList);
+    void  writeToFile(EmployeeList employees);
+    ArrayList<Employee> getAllEmployeesFromFile();
+    ArrayList<Project> getAllProjectsFromFile();
+    ArrayList<Project> getAllProjectsFromFile(Employee employee);
+    ArrayList<Employee> getAllTeamMembersFromProject(Project project);
 }
 

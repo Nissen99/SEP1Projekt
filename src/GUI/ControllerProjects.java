@@ -1,5 +1,7 @@
 package GUI;
+import Acquaintance.ILogik;
 import LogikLag.Employee;
+import LogikLag.LogikFacade;
 import LogikLag.Project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -16,7 +18,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -36,7 +37,9 @@ public class ControllerProjects implements Initializable
   @FXML private Button return_btn_return;
 @FXML private Button opretProjekt;
 
-  private Model model;
+  private ILogik logik;
+  private LogikFacade logikFacade = new LogikFacade();
+
 
 
 //  public void setModel(Model model){
@@ -56,12 +59,10 @@ public void findProjekt(){
 // model.findProjekt
 }
 
-private void setModel(Model model){
-  this.model = model;
-}
+
 
 public void reset(){
-  projectTableview.getItems().addAll(model.getAllProjectsFromFile());
+  projectTableview.getItems().addAll(logikFacade.datamanagement.getAllProjectsFromFile());
 }
 
 public void setup(){
@@ -84,7 +85,7 @@ public void displaySelected(MouseEvent event){
     kundeNavnLabel.setText(project.getClient().getClientName());
   }
   projectEmployeeTabel.getItems().clear();//Clear når vi trykker på nyt project, ellers ville det bare ligge oven på
-  projectEmployeeTabel.getItems().addAll(model.getAllTeamMembersProject(project));
+  projectEmployeeTabel.getItems().addAll(logikFacade.datamanagement.getAllTeamMembersFromProject(project));
   projectEmplyeeIDcounm.setCellValueFactory(new PropertyValueFactory("employeeID"));
   projectEmplyeeRolleCounm.setCellValueFactory(new PropertyValueFactory("role"));
   projectEmplyeeNameCounm.setCellValueFactory(new PropertyValueFactory("employeeName"));
@@ -123,8 +124,6 @@ public void fjernTeamMember(){
 
   @Override public void initialize(URL url, ResourceBundle resourceBundle)
   {
-    Model model = new Model();
-    setModel(model);
     setup();
     reset();
   }

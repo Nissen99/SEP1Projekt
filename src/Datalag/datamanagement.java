@@ -1,6 +1,5 @@
 package Datalag;
 
-import Acquaintance.IData;
 import Acquaintance.ILogik;
 import LogikLag.Employee;
 import LogikLag.EmployeeList;
@@ -12,7 +11,7 @@ import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class datamanagement implements Serializable, IData {
+public class datamanagement implements Serializable {
 
 
     public datamanagement() {
@@ -112,7 +111,7 @@ public class datamanagement implements Serializable, IData {
         EmployeeList employeeList = null;
         try
         {
-            FileInputStream inputStream = new FileInputStream(employeeFile);
+            FileInputStream inputStream = new FileInputStream("C:\\Users\\Antonio\\Documents\\GitHub\\SEP1Projekt\\EmployeeFile.bin");
             ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
 
             employeeList = (EmployeeList) loadEmployee.readObject();
@@ -213,14 +212,14 @@ public class datamanagement implements Serializable, IData {
 
 
 
-//    public ArrayList<Employee> getAllTeamMembersProject(Project project)
-//    {
-//
-//
-//        ArrayList<Employee> employeeArrayList = project.getTeamMemberList().getAllTeamMembers();
-//
-//
-//        return employeeArrayList;
-//    }
+    public ArrayList<Employee> getAllTeamMembersFromProject(Project project)
+    {
+
+
+        ArrayList<Employee> employeeArrayList = project.getTeamMemberList().getAllTeamMembers();
+
+
+        return employeeArrayList;
+    }
 
 }

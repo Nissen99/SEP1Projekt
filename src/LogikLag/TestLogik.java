@@ -1,12 +1,10 @@
 package LogikLag;
 
-import Acquaintance.IData;
 import Datalag.datamanagement;
 
 public class TestLogik
 {
     private LogikFacade logikFacade;
-    private IData data;
   public static void main(String[] args)
   {
 

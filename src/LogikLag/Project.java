@@ -153,4 +153,14 @@ public class Project extends IDGen implements Serializable
   {
     return projectStatus;
   }
-}
+
+  public ArrayList<Employee> getAllTeamMembersFromProject(Project project)
+  {
+
+
+    ArrayList<Employee> employeeArrayList = project.getTeamMemberList().getAllTeamMembers();
+
+
+    return employeeArrayList;
+  }}
+

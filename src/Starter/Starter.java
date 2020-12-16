@@ -1,6 +1,5 @@
 package Starter;
 
-import Acquaintance.IData;
 import Acquaintance.IGUI;
 import Acquaintance.ILogik;
 
@@ -13,10 +12,7 @@ public class Starter {
     public static void main(String[] args) {
         ILogik logik = new LogikFacade();
         IGUI gui = new GUIFacade();
-        IData data = new datamanagement();
         gui.injectLogik(logik);
-        logik.injectData(data);
-        data.
         gui.start2();
     }
 }
