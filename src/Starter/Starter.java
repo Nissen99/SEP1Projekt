@@ -16,6 +16,7 @@ public class Starter {
         IData data = new datamanagement();
         gui.injectLogik(logik);
         logik.injectData(data);
+        data.
         gui.start2();
     }
 }

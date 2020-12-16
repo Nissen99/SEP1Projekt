@@ -1,10 +1,14 @@
 package Datalag;
 
 import Acquaintance.IData;
+import Acquaintance.ILogik;
+import LogikLag.Employee;
 import LogikLag.EmployeeList;
+import LogikLag.Project;
 import LogikLag.ProjectList;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -16,6 +20,7 @@ public class datamanagement implements Serializable, IData {
 
     File employeeFile = new File("EmployeeFile" + ".bin");
     File projectFile = new File("ProjectFile" + ".bin");
+    ILogik logik;
 
 //Overloading princippet bliver benyttet her og i projectlisten.
     public void writeToFile(EmployeeList employees) {
@@ -99,4 +104,123 @@ public class datamanagement implements Serializable, IData {
         }
         return projects;
     }
+
+
+
+    public ArrayList<Employee> getAllEmployeesFromFile()
+    {
+        EmployeeList employeeList = null;
+        try
+        {
+            FileInputStream inputStream = new FileInputStream(employeeFile);
+            ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
+
+            employeeList = (EmployeeList) loadEmployee.readObject();
+            inputStream.close();
+            loadEmployee.close();
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+        ArrayList<Employee> employeeArrayList = employeeList.getAllEmployees();
+
+
+        return employeeArrayList;
+    }
+
+    //Overloading
+    public ArrayList<Project> getAllProjectsFromFile()
+    {
+
+
+        ProjectList projectList = null;
+
+        try
+        {
+            FileInputStream inputStream = new FileInputStream(projectFile);
+            ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
+
+            projectList = (ProjectList) loadEmployee.readObject();
+            inputStream.close();
+            loadEmployee.close();
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+        ArrayList<Project> projectArrayList = projectList.getProjects();
+
+
+        return projectArrayList;
+    }
+
+
+    //Overloading
+    public ArrayList<Project> getAllProjectsFromFile(Employee employee)
+    {
+        ProjectList projectList = null;
+        try
+        {
+            FileInputStream inputStream = new FileInputStream(projectFile);
+            ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
+
+            projectList = (ProjectList) loadEmployee.readObject();
+            inputStream.close();
+            loadEmployee.close();
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+
+        ArrayList<Project> projectArrayList = projectList.getProjectsByTeamMemberID(employee.getEmployeeID());
+
+
+        return projectArrayList;
+    }
+
+
+
+
+
+
+
+
+//    public ArrayList<Employee> getAllTeamMembersProject(Project project)
+//    {
+//
+//
+//        ArrayList<Employee> employeeArrayList = project.getTeamMemberList().getAllTeamMembers();
+//
+//
+//        return employeeArrayList;
+//    }
+
 }

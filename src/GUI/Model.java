@@ -1,12 +1,14 @@
 package GUI;
 
+import Acquaintance.IData;
 import LogikLag.*;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Model {
+public class Model
+{
 
   private ArrayList<Employee> list = new ArrayList<>();
 
@@ -49,7 +51,10 @@ public class Model {
   //Overloading
   public ArrayList<Project> getAllProjectsFromFile()
   {
+
+
     ProjectList projectList = null;
+
     try
     {
       FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\Mikkel\\IdeaProjects\\SEP1Projekt3\\ProjectFile.bin"));
@@ -121,17 +126,6 @@ public class Model {
 
     return employeeArrayList;
   }
-
-
-  public ArrayList<Requirement> getAllRequirementsFromProject(Project project)
-  {
-    ArrayList<Requirement> requirementArrayList = project.getAllRequirements();
-
-
-    return requirementArrayList;
-  }
-
-
 
 
 

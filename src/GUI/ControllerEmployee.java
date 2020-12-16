@@ -1,4 +1,5 @@
 package GUI;
+import Acquaintance.IData;
 import LogikLag.Employee;
 import LogikLag.Project;
 import javafx.event.ActionEvent;
@@ -42,6 +43,12 @@ public class ControllerEmployee implements Initializable
   @FXML
   public Button opretMedarbejder;
 
+  private IData data;
+  private GUIFacade guiFacade;
+
+
+
+
     public void setModel(Model model){
     this.model = model;
 
@@ -73,7 +80,7 @@ public class ControllerEmployee implements Initializable
   public void reset()
   {
 //    ObservableList<Employee> list2 = FXCollections.observableList(model.getAllStudentsFromFile());
-    tableViewEmployee.getItems().addAll(model.getAllEmployeesFromFile());
+    tableViewEmployee.getItems().addAll(data.getAllEmployeesFromFile());
   }
 
 
@@ -118,8 +125,9 @@ public class ControllerEmployee implements Initializable
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
-      Model model = new Model();
-      setModel(model);
+    GUIFacade guiFacade = new GUIFacade();
+    this.guiFacade= guiFacade;
+    guiFacade.
       setup();
       reset();
   }
