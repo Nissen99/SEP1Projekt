@@ -3,7 +3,7 @@ package LogikLag;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Project implements Serializable
+public class Project extends IDGen implements Serializable
 {
   private Client client;
   private ArrayList<Requirement> requirements;
@@ -27,6 +27,7 @@ public class Project implements Serializable
     this.projectStatus = "Not Started";
     requirements = new ArrayList<>();
 
+    this.projectID = generateProjectID();
 
   }
 

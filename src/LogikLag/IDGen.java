@@ -1,8 +1,9 @@
 package LogikLag;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class IDGen
+public class IDGen implements Serializable
 {
   private ArrayList<Integer> employeeIDs = new ArrayList<>();
   private ArrayList<Integer> projectIDs = new ArrayList<>();

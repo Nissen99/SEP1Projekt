@@ -77,6 +77,7 @@ public class Model {
   }
 
 
+
   public ArrayList<Project> getAllProjectsFromFile(Employee employee)
   {
     ProjectList projectList = null;
@@ -107,7 +108,6 @@ public class Model {
 
     return projectArrayList;
   }
-
 
 
   public ArrayList<Requirement> getAllRequirementsFromProject(Project project)
