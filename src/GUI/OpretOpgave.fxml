@@ -89,7 +89,7 @@
                   <Insets />
                </HBox.margin>
             </Button>
-            <Label text="How many selected:">
+            <Label text="Hvor mange er valgt:">
                <HBox.margin>
                   <Insets left="10.0" />
                </HBox.margin>

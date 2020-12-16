@@ -36,7 +36,8 @@ public class ControllerProjects implements Initializable
   @FXML public TableColumn<Employee, String> projectEmplyeeRolleCounm;
   @FXML public TableColumn<Employee, String> projectEmplyeeNameCounm;
   @FXML private Button return_btn_return;
-@FXML private Button opretProjekt;
+  @FXML private Button opretProjekt;
+  @FXML private Button sletProjektKnap;
 
   private ILogik logik;
   private LogikFacade logikFacade = new LogikFacade();
@@ -62,6 +63,16 @@ public void findProjekt(){
 // model.findProjekt
 }
 
+  public void removeProject()
+  {
+    ProjectList list = logikFacade.datamanagement.loadProject();
+    Project project = (Project) projectTableview.getSelectionModel().getSelectedItem();
+    list.removeProject(project.getProjectID());
+    logikFacade.datamanagement.writeToFile(list);
+    projectTableview.getItems().clear();
+    reset();
+
+  }
 
 
 public void reset(){

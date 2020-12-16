@@ -15,7 +15,7 @@
       <HBox prefHeight="36.0" prefWidth="600.0">
          <children>
             <Label text="projekt navn:" />
-            <TextField>
+            <TextField fx:id="opretProjectNavn">
                <HBox.margin>
                   <Insets left="75.0" />
                </HBox.margin>
@@ -24,10 +24,10 @@
       </HBox>
       <HBox prefHeight="44.0" prefWidth="600.0">
          <children>
-            <Label text="Projekt tids overlægnavn:" />
-            <TextField prefHeight="25.0" prefWidth="50.0">
+            <Label text="Projekt tids overlæg:" />
+            <TextField fx:id="opretProjectTimer" prefHeight="25.0" prefWidth="50.0">
                <HBox.margin>
-                  <Insets left="10.0" />
+                  <Insets left="35.0" />
                </HBox.margin>
             </TextField>
          </children>
@@ -36,7 +36,7 @@
       <HBox prefHeight="35.0" prefWidth="600.0">
          <children>
             <Label text="Kundenavn:" />
-            <TextField>
+            <TextField fx:id="opretProjectKundeNavn">
                <HBox.margin>
                   <Insets left="80.0" />
                </HBox.margin>
@@ -46,7 +46,7 @@
       <HBox prefHeight="34.0" prefWidth="600.0">
          <children>
             <Label text="Kunde Email:" />
-            <TextField>
+            <TextField fx:id="opretProjectKundeEmail">
                <HBox.margin>
                   <Insets left="73.0" />
                </HBox.margin>
@@ -56,7 +56,7 @@
       <HBox prefHeight="32.0" prefWidth="600.0">
          <children>
             <Label text="Kunde telefon nummer:" />
-            <TextField>
+            <TextField fx:id="opretProjectTelefonNummer">
                <HBox.margin>
                   <Insets left="17.0" />
                </HBox.margin>
@@ -66,7 +66,7 @@
       <HBox prefHeight="33.0" prefWidth="600.0">
          <children>
             <Label text="Deadline:" />
-            <DatePicker>
+            <DatePicker fx:id="opretProjectDeadLine">
                <HBox.margin>
                   <Insets left="92.0" />
                </HBox.margin>
@@ -105,10 +105,18 @@
          <children>
             <Button mnemonicParsing="false" text="Opret Krav">
                <HBox.margin>
-                  <Insets left="340.0" />
+                  <Insets left="300.0" />
                </HBox.margin>
             </Button>
-            <Button fx:id="Returnbutton" mnemonicParsing="false" onAction="#ChangeScene" text="Return " />
+            <Button fx:id="Returnbutton" mnemonicParsing="false" onAction="#ChangeScene" text="Return ">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin></Button>
+            <Button fx:id="opretProjectConfirm" mnemonicParsing="false" onAction="#opretProject" text="Confirm">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
          </children>
       </HBox>
    </children>
