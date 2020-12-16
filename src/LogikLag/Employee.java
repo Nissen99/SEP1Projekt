@@ -1,10 +1,12 @@
 package LogikLag;
 
 import Acquaintance.IEmployee;
+import javafx.collections.ObservableArray;
 
 import java.io.Serializable;
 
-public class Employee extends IDGen implements IEmployee, Serializable
+public class Employee extends IDGen
+    implements IEmployee, Serializable
 {
   private int employeeID;
   private String employeeName;

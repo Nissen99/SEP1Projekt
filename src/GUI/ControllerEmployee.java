@@ -1,9 +1,6 @@
 package GUI;
 import LogikLag.Employee;
 import LogikLag.Project;
-import com.sun.webkit.Timer;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,6 +31,7 @@ public class ControllerEmployee implements Initializable
   @FXML public TableColumn<String, Integer> employeeTeableCounmProjectID;
   @FXML public TableColumn<Project, String> employeeTableCounmProjectName;
   @FXML public TableView employeeProjectTableView;
+  @FXML public TableColumn employeeRoleCounm;
 
   private Model model;
   @FXML public Button return_button;
@@ -65,8 +63,6 @@ public class ControllerEmployee implements Initializable
 
   public void findEmployee(){
     System.out.println("Employee den bøgse");
-    setup();
-    reset();
     // model.findProjekt
   }
 
@@ -77,7 +73,7 @@ public class ControllerEmployee implements Initializable
   public void reset()
   {
 //    ObservableList<Employee> list2 = FXCollections.observableList(model.getAllStudentsFromFile());
-    tableViewEmployee.getItems().addAll(model.getAllStudentsFromFile());
+    tableViewEmployee.getItems().addAll(model.getAllEmployeesFromFile());
   }
 
 
@@ -98,6 +94,10 @@ public class ControllerEmployee implements Initializable
 
     }
   }
+
+
+
+  //Det her sker onClick, så hvis man ikke vælger en person kaster den Nullpointer
   public void displaySelected(MouseEvent event){
 
     Employee person =  (Employee) tableViewEmployee.getSelectionModel().getSelectedItem();
@@ -110,6 +110,7 @@ public class ControllerEmployee implements Initializable
       nameLabel.setText(person.getEmployeeName());
       employeeIDLabel.setText(String.valueOf(person.getEmployeeID()));
     }
+    employeeProjectTableView.getItems().clear(); //Clear når vi trykker på ny person, ellers ville det bare ligge oven på
     employeeProjectTableView.getItems().addAll(model.getAllProjectsFromFile(person));
     employeeTeableCounmProjectID.setCellValueFactory(new PropertyValueFactory("projectID"));
     employeeTableCounmProjectName.setCellValueFactory(new PropertyValueFactory("projectName"));

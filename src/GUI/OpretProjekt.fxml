@@ -76,7 +76,7 @@
       <HBox prefHeight="52.0" prefWidth="600.0">
          <children>
             <Label text="Ansvarlig Team member" />
-            <ComboBox prefWidth="150.0">
+            <ComboBox fx:id="addedTeamMember" prefWidth="150.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -84,7 +84,7 @@
                   <Insets left="13.0" />
                </HBox.margin>
             </ComboBox>
-            <Button fx:id="addAnsvarligTeammenber" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-style: none;" text="+">
+            <Button fx:id="addAnsvarligTeammenber" mnemonicParsing="false" onAction="#valgtTeamMember" style="-fx-background-color: green; -fx-border-style: none;" text="+">
                <HBox.margin>
                   <Insets />
                </HBox.margin>

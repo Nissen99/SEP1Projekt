@@ -112,7 +112,7 @@
             <TableView fx:id="employeeProjectTableView" prefHeight="247.0" prefWidth="479.0">
                <columns>
                   <TableColumn fx:id="employeeTeableCounmProjectID" prefWidth="75.0" text="ProjectID" />
-                  <TableColumn prefWidth="93.0" text="Rolle" />
+                  <TableColumn fx:id="employeeRoleCounm" prefWidth="93.0" text="Rolle" />
                   <TableColumn fx:id="employeeTableCounmProjectName" prefWidth="310.0" text="Project navn" />
                </columns>
                <VBox.margin>

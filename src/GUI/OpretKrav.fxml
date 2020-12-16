@@ -10,13 +10,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="GUI.ControllerOpretKrav" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label style="-fx-font-size: 24; -fx-font-weight: bold;" text="Opret krav" />
       <HBox prefHeight="36.0" prefWidth="600.0">
          <children>
             <Label text="Krav navn:" />
-            <TextField>
+            <TextField fx:id="textFieldName">
                <HBox.margin>
                   <Insets left="86.0" />
                </HBox.margin></TextField>
@@ -28,7 +28,7 @@
       <HBox prefHeight="46.0" prefWidth="600.0">
          <children>
             <Label text="Krav user story:" />
-            <TextArea prefHeight="200.0" prefWidth="200.0">
+            <TextArea fx:id="teaxtAreaUserStory" prefHeight="200.0" prefWidth="200.0">
                <HBox.margin>
                   <Insets left="60.0" />
                </HBox.margin>
@@ -41,7 +41,7 @@
       <HBox prefHeight="31.0" prefWidth="590.0" stylesheets="@style.css">
          <children>
             <Label text="Tids overslag:" />
-            <TextField prefHeight="25.0" prefWidth="39.0">
+            <TextField fx:id="textFieldTidsOverslag" prefHeight="25.0" prefWidth="39.0">
                <HBox.margin>
                   <Insets left="70.0" />
                </HBox.margin>
@@ -54,7 +54,7 @@
       <HBox prefHeight="33.0" prefWidth="600.0">
          <children>
             <Label text="Deadline:" />
-            <DatePicker>
+            <DatePicker fx:id="dateReaderDeadline">
                <HBox.margin>
                   <Insets left="92.0" />
                </HBox.margin>
@@ -71,7 +71,7 @@
                   <Insets left="10.0" />
                </HBox.margin>
             </Label>
-            <ComboBox fx:id="opretKrav_ComboBox" prefWidth="150.0">
+            <ComboBox fx:id="comboBoxAnsvarligTeam" prefWidth="150.0">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -79,7 +79,7 @@
                   <Insets left="13.0" />
                </HBox.margin>
             </ComboBox>
-            <Button fx:id="opretKravAnsvarligTeamMenber" mnemonicParsing="false" onAction="#addTeamMember" style="-fx-background-color: green; -fx-border-style: none;" text="+">
+            <Button fx:id="opretKravAnsvarligTeamMenber" mnemonicParsing="false" style="-fx-background-color: green; -fx-border-style: none;" text="+">
                <HBox.margin>
                   <Insets />
                </HBox.margin>

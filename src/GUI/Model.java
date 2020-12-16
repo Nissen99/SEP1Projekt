@@ -14,12 +14,13 @@ public class Model {
 
 
 
-  public ArrayList<Employee> getAllStudentsFromFile()
+
+  public ArrayList<Employee> getAllEmployeesFromFile()
   {
     EmployeeList employeeList = null;
     try
     {
-      FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\mikke\\IdeaProjects\\SEP1Projekt\\EmployeeFile.bin"));
+      FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\Mikkel\\IdeaProjects\\SEP1Projekt3\\EmployeeFile.bin"));
       ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
 
       employeeList = (EmployeeList) loadEmployee.readObject();
@@ -45,12 +46,13 @@ public class Model {
     return employeeArrayList;
   }
 
+  //Overloading
   public ArrayList<Project> getAllProjectsFromFile()
   {
     ProjectList projectList = null;
     try
     {
-      FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\mikke\\IdeaProjects\\SEP1Projekt\\ProjectFile.bin"));
+      FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\Mikkel\\IdeaProjects\\SEP1Projekt3\\ProjectFile.bin"));
       ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
 
       projectList = (ProjectList) loadEmployee.readObject();
@@ -77,13 +79,13 @@ public class Model {
   }
 
 
-
+//Overloading
   public ArrayList<Project> getAllProjectsFromFile(Employee employee)
   {
     ProjectList projectList = null;
     try
     {
-      FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\mikke\\IdeaProjects\\SEP1Projekt\\ProjectFile.bin"));
+      FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\Mikkel\\IdeaProjects\\SEP1Projekt3\\ProjectFile.bin"));
       ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
 
       projectList = (ProjectList) loadEmployee.readObject();
@@ -107,6 +109,17 @@ public class Model {
 
 
     return projectArrayList;
+  }
+
+
+  public ArrayList<Employee> getAllTeamMembersProject(Project project)
+  {
+
+
+    ArrayList<Employee> employeeArrayList = project.getTeamMemberList().getAllTeamMembers();
+
+
+    return employeeArrayList;
   }
 
 

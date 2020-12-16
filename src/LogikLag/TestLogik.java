@@ -39,9 +39,14 @@ public class TestLogik
     teamMemberList.addEmployee(mikkel4);
     teamMemberList.addEmployee(mikkel5);
 
+    projectList.getProjects().get(0).getTeamMemberList().addTeamMember(mikkel);
+    projectList.getProjects().get(0).getTeamMemberList().addTeamMember(mikkel2);
+    projectList.getProjects().get(0).getTeamMemberList().addTeamMember(mikkel3);
+
 
     datamanagement data = new datamanagement();
     data.writeToFile(projectList);
+    data.writeToFile(teamMemberList);
     mikkel.setRole("Whatever");
       System.out.println(data.loadProject());
   }

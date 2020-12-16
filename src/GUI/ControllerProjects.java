@@ -1,22 +1,42 @@
 package GUI;
+import LogikLag.Employee;
+import LogikLag.Project;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class ControllerProjects
+public class ControllerProjects implements Initializable
 {
-@FXML
-private Button return_btn_return;
-@FXML
-private Button opretProjekt;
+  @FXML public TableView projectTableview;
+  @FXML public TableColumn<String, Integer> projectIDCounm;
+  @FXML public TableColumn<Project, String> projectNavnCounm;
+  @FXML public Label projectNameLabel;
+  @FXML public Label projectIDLabel;
+  @FXML public Label kundeNavnLabel;
+  @FXML public TableView projectEmployeeTabel;
+  @FXML public TableColumn<String, Integer> projectEmplyeeIDcounm;
+  @FXML public TableColumn<Employee, String> projectEmplyeeRolleCounm;
+  @FXML public TableColumn<Employee, String> projectEmplyeeNameCounm;
+  @FXML private Button return_btn_return;
+@FXML private Button opretProjekt;
+
+  private Model model;
 
 
 //  public void setModel(Model model){
@@ -36,6 +56,44 @@ public void findProjekt(){
 // model.findProjekt
 }
 
+private void setModel(Model model){
+  this.model = model;
+}
+
+public void reset(){
+  projectTableview.getItems().addAll(model.getAllProjectsFromFile());
+}
+
+public void setup(){
+  projectIDCounm.setCellValueFactory(new PropertyValueFactory("projectID"));
+  projectNavnCounm.setCellValueFactory(new PropertyValueFactory("projectName"));
+}
+
+
+  //Det her sker onClick, så hvis man ikke vælger et project kaster den Nullpointer
+public void displaySelected(MouseEvent event){
+  Project project = (Project) projectTableview.getSelectionModel().getSelectedItem();
+
+  if (project == null)
+  {
+    projectNameLabel.setText("Intet valgt");
+  }
+  else {
+    projectNameLabel.setText(project.getProjectName());
+    projectIDLabel.setText(String.valueOf(project.getProjectID()));
+    kundeNavnLabel.setText(project.getClient().getClientName());
+  }
+  projectEmployeeTabel.getItems().clear();//Clear når vi trykker på nyt project, ellers ville det bare ligge oven på
+  projectEmployeeTabel.getItems().addAll(model.getAllTeamMembersProject(project));
+  projectEmplyeeIDcounm.setCellValueFactory(new PropertyValueFactory("employeeID"));
+  projectEmplyeeRolleCounm.setCellValueFactory(new PropertyValueFactory("role"));
+  projectEmplyeeNameCounm.setCellValueFactory(new PropertyValueFactory("employeeName"));
+
+}
+
+
+
+
 public void seKrav(){
   System.out.println("pop ud for Krav");
 }
@@ -52,6 +110,8 @@ public void fjernTeamMember(){
   System.out.println("fuck off mr team member");
 }
 
+
+
   @FXML
   public void ChangeScene(javafx.event.ActionEvent actionEvent) throws IOException {
    if(actionEvent.getSource() == return_btn_return) {
@@ -59,4 +119,13 @@ public void fjernTeamMember(){
       Scene newScene = new Scene(nextView);
       Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
       stage.setScene(newScene);
-    }}}
+    }}
+
+  @Override public void initialize(URL url, ResourceBundle resourceBundle)
+  {
+    Model model = new Model();
+    setModel(model);
+    setup();
+    reset();
+  }
+}

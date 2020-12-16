@@ -43,10 +43,10 @@
                   <Insets bottom="3.0" />
                </VBox.margin>
             </HBox>
-            <TableView maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="500.0" prefWidth="480.0">
+            <TableView fx:id="projectTableview" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#displaySelected" prefHeight="500.0" prefWidth="480.0">
               <columns>
-                <TableColumn prefWidth="78.0" text="ProjectID" />
-                <TableColumn prefWidth="421.0" text="Project Navn" />
+                <TableColumn fx:id="projectIDCounm" prefWidth="78.0" text="ProjectID" />
+                <TableColumn fx:id="projectNavnCounm" prefWidth="421.0" text="Project Navn" />
               </columns>
             </TableView>
          </children>
@@ -63,7 +63,7 @@
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
                   </Label>
-                  <Label styleClass="normalLabel" text="Label">
+                  <Label fx:id="projectNameLabel" styleClass="normalLabel">
                      <HBox.margin>
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
@@ -77,7 +77,7 @@
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
                   </Label>
-                  <Label styleClass="normalLabel" text="Label">
+                  <Label fx:id="projectIDLabel" styleClass="normalLabel">
                      <HBox.margin>
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
@@ -91,7 +91,7 @@
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
                   </Label>
-                  <Label styleClass="normalLabel" text="Label">
+                  <Label fx:id="kundeNavnLabel" styleClass="normalLabel">
                      <HBox.margin>
                         <Insets left="10.0" top="25.0" />
                      </HBox.margin>
@@ -108,11 +108,11 @@
                   </Button>
                </children>
             </HBox>
-            <TableView prefHeight="233.0" prefWidth="479.0">
+            <TableView fx:id="projectEmployeeTabel" prefHeight="233.0" prefWidth="479.0">
               <columns>
-                  <TableColumn prefWidth="117.0" text="MedarbejderID" />
-                <TableColumn prefWidth="104.0" text="Role" />
-                <TableColumn prefWidth="257.0" text="Name" />
+                  <TableColumn fx:id="projectEmplyeeIDcounm" prefWidth="117.0" text="MedarbejderID" />
+                <TableColumn fx:id="projectEmplyeeRolleCounm" prefWidth="104.0" text="Role" />
+                <TableColumn fx:id="projectEmplyeeNameCounm" prefWidth="257.0" text="Name" />
               </columns>
                <VBox.margin>
                   <Insets />
