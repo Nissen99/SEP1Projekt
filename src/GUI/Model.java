@@ -1,9 +1,6 @@
 package GUI;
 
-import LogikLag.Employee;
-import LogikLag.EmployeeList;
-import LogikLag.Project;
-import LogikLag.ProjectList;
+import LogikLag.*;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -78,6 +75,50 @@ public class Model {
 
     return projectArrayList;
   }
+
+
+  public ArrayList<Project> getAllProjectsFromFile(Employee employee)
+  {
+    ProjectList projectList = null;
+    try
+    {
+      FileInputStream inputStream = new FileInputStream(new File("C:\\Users\\mikke\\IdeaProjects\\SEP1Projekt\\ProjectFile.bin"));
+      ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
+
+      projectList = (ProjectList) loadEmployee.readObject();
+      inputStream.close();
+      loadEmployee.close();
+    }
+    catch (FileNotFoundException e)
+    {
+      e.printStackTrace();
+    }
+    catch (IOException e)
+    {
+      e.printStackTrace();
+    }
+    catch (ClassNotFoundException e)
+    {
+      e.printStackTrace();
+    }
+
+    ArrayList<Project> projectArrayList = projectList.getProjectsByTeamMemberID(employee.getEmployeeID());
+
+
+    return projectArrayList;
+  }
+
+
+
+  public ArrayList<Requirement> getAllRequirementsFromProject(Project project)
+  {
+    ArrayList<Requirement> requirementArrayList = project.getAllRequirements();
+
+
+    return requirementArrayList;
+  }
+
+
 
 
 

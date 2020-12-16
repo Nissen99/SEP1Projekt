@@ -80,24 +80,28 @@ public class ProjectList implements Serializable
     return null;
   }
 
-  public Project getProjectByProjectClient(String clientName){
+  public ArrayList<Project> getProjectsByProjectClient(String clientName){
     for (int i = 0; i < projects.size(); i++)
     {
+      ArrayList<Project> projectArrayList = new ArrayList<>();
+
       if (projects.get(i).getClient().getClientName().equals(clientName)){
-        return projects.get(i);
+      projectArrayList.add(projects.get(i));
       }
     }
-    return null;
+    return projects;
   }
 
-  public Project getProjectByTeamMemberID(int teamMemberID){
+  public ArrayList<Project> getProjectsByTeamMemberID(int teamMemberID){
+    ArrayList<Project> projectArrayList = new ArrayList<>();
+
     for (int i = 0; i < projects.size(); i++)
     {
-       if (projects.get(i).getTeamMemberList().getTeamMember(teamMemberID) != null){
-         return projects.get(i);
+      if (projects.get(i).getTeamMemberList().getTeamMember(teamMemberID) != null){
+         projectArrayList.add(projects.get(i));
        }
     }
-    return null;
+    return projectArrayList;
   }
 
 

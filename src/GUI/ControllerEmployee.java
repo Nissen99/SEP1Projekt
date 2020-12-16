@@ -20,6 +20,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InvalidClassException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -110,10 +111,17 @@ public class ControllerEmployee implements Initializable
       nameLabel.setText(person.getEmployeeName());
       employeeIDLabel.setText(String.valueOf(person.getEmployeeID()));
     }
-    employeeProjectTableView.getItems().addAll(model.getAllStudentsFromFile());
+
+    //Det kan Throw 2 exeptions hvis den teammember man clicker på ikke er på et project
+    //Null pointer og class not found
+    try{
+    employeeProjectTableView.getItems().addAll(model.getAllProjectsFromFile());
     employeeTeableCounmProjectID.setCellValueFactory(new PropertyValueFactory("projectID"));
     employeeTableCounmProjectName.setCellValueFactory(new PropertyValueFactory("projectName"));
-  }
+  }catch (NullPointerException e){
+      e.printStackTrace();
+    }
+    }
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
