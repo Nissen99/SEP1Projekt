@@ -90,6 +90,21 @@ public class ControllerOpretProjekt implements Initializable {
 
     logikFacade.datamanagement.writeToFile(list);
 
+    clearOpretFaelter();
+  }
+
+
+  public void clearOpretFaelter(){
+  opretProjectNavn.clear();
+    opretProjectTimer.clear();
+    opretProjectKundeNavn.clear();
+    opretProjectKundeEmail.clear();
+    opretProjectTelefonNummer.clear();
+    opretProjectDeadLine.getEditor().clear();
+
+    initialize();
+addedTeamMember.setItems(list);
+    opretProjectHowManySelectedLabel.setText(String.valueOf(0));
 
 
   }
@@ -107,5 +122,19 @@ public class ControllerOpretProjekt implements Initializable {
     }
     addedTeamMember.setItems(list);
   }
-}
+
+  public void initialize(){
+    employeeValgtList = new ArrayList<>();
+    employeeArrayList = logikFacade.datamanagement.getAllEmployeesFromFile();
+
+    list = FXCollections.observableArrayList();
+
+    for (int i = 0; i < employeeArrayList.size(); i++) {
+      list.add(employeeArrayList.get(i).getEmployeeID() + ", " + employeeArrayList.get(i).getEmployeeName());
+    }
+    addedTeamMember.setItems(list);
+  }
+
+  }
+
 

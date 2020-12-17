@@ -35,6 +35,7 @@ public class ControllerEmployee implements Initializable
   @FXML public TableColumn employeeRoleCounm;
 
 
+
   @FXML public Button return_button;
   @FXML
   public Label nameLabel;
@@ -43,26 +44,22 @@ public class ControllerEmployee implements Initializable
   @FXML
   public Button opretMedarbejder;
   @FXML public Button fjernMedarbejderKnap;
+  @FXML public TableColumn employeeTableCounmProjectStatus;
   private Datalag.datamanagement data;
   private  ILogik logik;
   private GUIFacade gui;
   private ViewHandler viewHandler;
   private  LogikFacade logikFacade = new LogikFacade();
 
-  public void setlogik(ILogik logik) {
-  this.logik = logik;
-}
 
 
   @FXML
   public void opretEmployee(ActionEvent actionEvent) throws IOException {
-    System.out.println("Employee du bøgse");
     Parent nextView = FXMLLoader.load(getClass().getResource("OpretMedarbejder.fxml"));
     Scene newScene = new Scene(nextView);
     Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     stage.setScene(newScene);
-    //  viewHandler.closeView();
-    // model.opretProjekt();
+
   }
   public void ChangeScene(ActionEvent event) throws IOException {
     viewHandler.ChangeScene(event, "StartSide.fxml");
@@ -123,6 +120,7 @@ public class ControllerEmployee implements Initializable
     employeeProjectTableView.getItems().addAll(logikFacade.datamanagement.getAllProjectsFromFile(person));
     employeeTeableCounmProjectID.setCellValueFactory(new PropertyValueFactory("projectID"));
     employeeTableCounmProjectName.setCellValueFactory(new PropertyValueFactory("projectName"));
+    employeeTableCounmProjectStatus.setCellValueFactory(new PropertyValueFactory("projectStatus"));
   }
   public void setViewHandler(ViewHandler viewHandler) {
     this.viewHandler = viewHandler;
@@ -133,5 +131,6 @@ public class ControllerEmployee implements Initializable
      setViewHandler(viewHandler);
       setup();
       reset();
+
   }
 }

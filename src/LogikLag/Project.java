@@ -23,6 +23,7 @@ public class Project extends IDGen implements Serializable
     this.client = client;
     this.teamMemberList = teamMemberList;
     this.projectDeadline = projectDeadline.copy();
+    projectHoursWorked = 0;
 
     this.projectStatus = "Ikke startet";
     requirements = new ArrayList<>();
@@ -86,6 +87,7 @@ public class Project extends IDGen implements Serializable
 
   //Der kan kun være 1 product owner/scrum master, så hvis en ny bliver sat
   // laver vi den nuværende til "team member" igen
+  //Dette gør dog at man ikke kan være både product owner og scrum master
   public void appointScrumMaster(int employeeID)
   {
 
@@ -105,6 +107,10 @@ public class Project extends IDGen implements Serializable
         teamMemberList.getAllTeamMembers().get(i).setRole("scrum master");
       }
     }
+  }
+
+  public void addHoursWorked(int hours){
+    projectHoursWorked += hours;
   }
 
   public void appointProductOwner(int employeeID)
