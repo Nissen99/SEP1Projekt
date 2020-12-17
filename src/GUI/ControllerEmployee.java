@@ -46,6 +46,7 @@ public class ControllerEmployee implements Initializable
   private Datalag.datamanagement data;
   private  ILogik logik;
   private GUIFacade gui;
+  private ViewHandler viewHandler;
   private  LogikFacade logikFacade = new LogikFacade();
 
   public void setlogik(ILogik logik) {
@@ -62,6 +63,9 @@ public class ControllerEmployee implements Initializable
     stage.setScene(newScene);
     //  viewHandler.closeView();
     // model.opretProjekt();
+  }
+  public void ChangeScene(ActionEvent event) throws IOException {
+    viewHandler.ChangeScene(event, "StartSide.fxml");
   }
 
 
@@ -89,16 +93,16 @@ public class ControllerEmployee implements Initializable
 
   }
 
-  public void ChangeScene(javafx.event.ActionEvent actionEvent) throws IOException {
-    if (actionEvent.getSource() == return_button) {
-      Parent nextView = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
-      Scene newScene = new Scene(nextView);
-      Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-      stage.setScene(newScene);
-
-
-    }
-  }
+//  public void ChangeScene(javafx.event.ActionEvent actionEvent) throws IOException {
+//    if (actionEvent.getSource() == return_button) {
+//      Parent nextView = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
+//      Scene newScene = new Scene(nextView);
+//      Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+//      stage.setScene(newScene);
+//
+//
+//    }
+//  }
 
 
 
@@ -120,9 +124,13 @@ public class ControllerEmployee implements Initializable
     employeeTeableCounmProjectID.setCellValueFactory(new PropertyValueFactory("projectID"));
     employeeTableCounmProjectName.setCellValueFactory(new PropertyValueFactory("projectName"));
   }
-
+  public void setViewHandler(ViewHandler viewHandler) {
+    this.viewHandler = viewHandler;
+  }
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
+      ViewHandler viewHandler = new ViewHandler();
+     setViewHandler(viewHandler);
       setup();
       reset();
   }
