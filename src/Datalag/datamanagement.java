@@ -146,7 +146,7 @@ public class datamanagement implements Serializable {
 
         try
         {
-            FileInputStream inputStream = new FileInputStream("C:\\Users\\Mikkel\\IdeaProjects\\SEP1Projekt3\\ProjectFile.bin");
+            FileInputStream inputStream = new FileInputStream("C:\\Users\\Antonio\\Documents\\GitHub\\SEP1Projekt\\ProjectFile.bin");
             ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
 
             projectList = (ProjectList) loadEmployee.readObject();

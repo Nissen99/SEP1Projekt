@@ -43,7 +43,7 @@ public class ControllerProjects implements Initializable
   @FXML private Button return_btn_return;
   @FXML private Button opretProjekt;
   @FXML private Button sletProjektKnap;
-
+  private ViewHandler viewHandler;
   private ILogik logik;
   private LogikFacade logikFacade = new LogikFacade();
 
@@ -51,13 +51,15 @@ public class ControllerProjects implements Initializable
 
 
 
+
+
+public void opretkrav(ActionEvent event) throws  IOException {
+  viewHandler.ChangeScene(event, "KravUI.fxml");
+}
+
 @FXML
 public void opretProjekt(ActionEvent event) throws IOException {
-
-        Parent nextView = FXMLLoader.load(getClass().getResource("OpretProjekt.fxml"));
-        Scene newScene = new Scene(nextView);
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(newScene);
+  viewHandler.ChangeScene(event, "OpretProjekt.fxml");
 }
 
 
@@ -184,12 +186,6 @@ public void displaySelected(MouseEvent event){
 
 
 
-
-public void seKrav(){
-  System.out.println("pop ud for Krav");
-}
-
-
 public void addTeamMember(){
   System.out.println("adder team member");
 }
@@ -201,16 +197,17 @@ public void fjernTeamMember(){
 
 
   @FXML
-  public void ChangeScene(javafx.event.ActionEvent actionEvent) throws IOException {
-   if(actionEvent.getSource() == return_btn_return) {
-      Parent nextView = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
-      Scene newScene = new Scene(nextView);
-      Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-      stage.setScene(newScene);
-    }}
+  public void ChangeScene(ActionEvent event) throws IOException {
+    viewHandler.ChangeScene(event, "StartSide.fxml");
 
+    }
+  public void setViewHandler(ViewHandler viewHandler) {
+    this.viewHandler = viewHandler;
+  }
   @Override public void initialize(URL url, ResourceBundle resourceBundle)
   {
+    ViewHandler viewHandler = new ViewHandler();
+    setViewHandler(viewHandler);
     setup();
     reset();
     statusList.addAll("Ikke startet", "Startet", "Afsluttet", "Godkendt","Afvist" );

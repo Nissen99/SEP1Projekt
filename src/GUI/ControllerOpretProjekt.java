@@ -3,6 +3,7 @@ import Acquaintance.ILogik;
 import LogikLag.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -12,6 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -39,19 +41,15 @@ public class ControllerOpretProjekt implements Initializable {
   private ObservableList<String> list;
   private ILogik logik;
   private LogikFacade logikFacade = new LogikFacade();
+  private ViewHandler viewHandler;
 
 
 
 
 
 
-
-  public void ChangeScene(javafx.event.ActionEvent actionEvent) throws IOException {
-    Parent nextView = FXMLLoader.load(getClass().getResource("ProjectUI.fxml"));
-    Scene newScene = new Scene(nextView);
-    Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    stage.setScene(newScene);
-    stage.setScene(newScene);
+  public void ChangeScene(ActionEvent event) throws IOException {
+    viewHandler.ChangeScene(event, "ProjectUI.fxml");
 
   }
 
@@ -108,10 +106,15 @@ addedTeamMember.setItems(list);
 
 
   }
+  public void setViewHandler(ViewHandler viewHandler) {
+    this.viewHandler = viewHandler;
+  }
+
 
   @Override
   public void initialize(URL url, ResourceBundle resourceBundle) {
-
+    ViewHandler viewHandler = new ViewHandler();
+    setViewHandler(viewHandler);
     employeeValgtList = new ArrayList<>();
     employeeArrayList = logikFacade.datamanagement.getAllEmployeesFromFile();
 

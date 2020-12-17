@@ -54,11 +54,10 @@ public class ControllerEmployee implements Initializable
 
 
   @FXML
-  public void opretEmployee(ActionEvent actionEvent) throws IOException {
-    Parent nextView = FXMLLoader.load(getClass().getResource("OpretMedarbejder.fxml"));
-    Scene newScene = new Scene(nextView);
-    Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-    stage.setScene(newScene);
+  public void opretEmployee(ActionEvent event) throws IOException {
+      viewHandler.ChangeScene(event,"OpretMedarbejder.fxml");
+
+
 
   }
   public void ChangeScene(ActionEvent event) throws IOException {
@@ -78,7 +77,6 @@ public class ControllerEmployee implements Initializable
   @FXML
   public void reset()
   {
-//    ObservableList<Employee> list2 = FXCollections.observableList(model.getAllStudentsFromFile());
     tableViewEmployee.getItems().addAll(logikFacade.datamanagement.getAllEmployeesFromFile());
   }
 
@@ -90,16 +88,6 @@ public class ControllerEmployee implements Initializable
 
   }
 
-//  public void ChangeScene(javafx.event.ActionEvent actionEvent) throws IOException {
-//    if (actionEvent.getSource() == return_button) {
-//      Parent nextView = FXMLLoader.load(getClass().getResource("StartSide.fxml"));
-//      Scene newScene = new Scene(nextView);
-//      Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-//      stage.setScene(newScene);
-//
-//
-//    }
-//  }
 
 
 

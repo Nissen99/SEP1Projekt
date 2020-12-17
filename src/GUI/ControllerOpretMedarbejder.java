@@ -23,19 +23,13 @@ public class ControllerOpretMedarbejder implements Initializable
   public Button Returnknap;
   public TextField textFieldMedArbejder;
   private LogikFacade logikFacade = new LogikFacade();
+  private ViewHandler viewHandler;
 
 
 
+    public void ChangeScene(ActionEvent event) throws IOException {
+        viewHandler.ChangeScene(event, "EmployeeUI.fxml");
 
-    public void ChangeScene(javafx.event.ActionEvent actionEvent) throws IOException {
-        if(actionEvent.getSource() == Returnknap) {
-            Parent nextView = FXMLLoader.load(getClass().getResource("EmployeeUI.fxml"));
-            Scene newScene = new Scene(nextView);
-            Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setScene(newScene);
-            stage.setScene(newScene);
-
-    }
         }
 
 
@@ -47,10 +41,13 @@ public class ControllerOpretMedarbejder implements Initializable
       textFieldMedArbejder.clear();
           System.out.println("Medarbejder oprettet");
     }
-
+    public void setViewHandler(ViewHandler viewHandler) {
+        this.viewHandler = viewHandler;
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        ViewHandler viewHandler = new ViewHandler();
+        setViewHandler(viewHandler);
     }
 }

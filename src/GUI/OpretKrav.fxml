@@ -95,10 +95,15 @@
             </Button>
             <Button mnemonicParsing="false" text="Opret kravet">
                <HBox.margin>
-                  <Insets left="35.0" />
+                  <Insets left="20.0" />
                </HBox.margin>
             </Button>
          </children>
       </HBox>
+      <Button mnemonicParsing="false" onAction="#returnmetode" text="Return">
+         <VBox.margin>
+            <Insets bottom="120.0" left="430.0" />
+         </VBox.margin>
+      </Button>
    </children>
 </VBox>
