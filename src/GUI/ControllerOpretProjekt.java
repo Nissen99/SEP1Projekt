@@ -56,17 +56,20 @@ public class ControllerOpretProjekt implements Initializable {
   }
 
   public void valgtTeamMember() {
-
     employeeValgtList.add(employeeArrayList.get(addedTeamMember.getSelectionModel().getSelectedIndex()));
+    employeeArrayList.remove(employeeArrayList.get(addedTeamMember.getSelectionModel().getSelectedIndex()));
 
     list.remove(list.get(addedTeamMember.getSelectionModel().getSelectedIndex()));
-
     //Det var svært at få et overblik over hvem man har valgt, det ville være for stor
     //en ændring at lave nyt tableview til at vise det, så vi addede en counter, så du kan se hvor mange du har valgt
     opretProjectHowManySelectedLabel.setText(String.valueOf(employeeValgtList.size()));
     addedTeamMember.setItems(list);
-
   }
+
+
+
+
+
 
 
   public void opretProject(){
@@ -76,7 +79,6 @@ public class ControllerOpretProjekt implements Initializable {
     {
       teamMemberList.addTeamMember(employeeValgtList.get(i));
     }
-
 
     ProjectList list = logikFacade.datamanagement.loadProject();
 

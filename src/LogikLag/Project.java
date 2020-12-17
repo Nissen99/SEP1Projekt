@@ -24,13 +24,33 @@ public class Project extends IDGen implements Serializable
     this.teamMemberList = teamMemberList;
     this.projectDeadline = projectDeadline.copy();
 
-    this.projectStatus = "Not Started";
+    this.projectStatus = "Ikke startet";
     requirements = new ArrayList<>();
 
     this.projectID = generateProjectID();
 
   }
 
+  public void setProjectStatus(String status){
+
+    switch (status){
+
+      case "Ikke startet":
+
+      case "Startet":
+
+      case "Afsluttet":
+
+      case "Godkendt":
+
+      case "Afvist":
+        this.projectStatus = status;
+        break;
+
+      default:
+        break;
+    }
+  }
 
   public Requirement getRequirement(int requirementID){
     for (int i = 0; i < requirements.size(); i++)
