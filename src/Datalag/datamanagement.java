@@ -43,7 +43,7 @@ public class datamanagement implements Serializable {
 
         try {
 
-            FileOutputStream outputStream = new FileOutputStream("C:\\Users\\Mikkel\\IdeaProjects\\SEP1Projekt3\\ProjectFile.bin");
+            FileOutputStream outputStream = new FileOutputStream(projectFile);
             ObjectOutputStream WriteToFileStream = new ObjectOutputStream(outputStream);
             WriteToFileStream.writeObject(projectList);
             outputStream.close();
@@ -85,7 +85,7 @@ public class datamanagement implements Serializable {
         ProjectList projects = null;
 
         try {
-            FileInputStream inputStream = new FileInputStream("C:\\Users\\Mikkel\\IdeaProjects\\SEP1Projekt3\\ProjectFile.bin");
+            FileInputStream inputStream = new FileInputStream(projectFile);
             ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
 
             projects = (ProjectList) loadEmployee.readObject();
@@ -145,7 +145,7 @@ public class datamanagement implements Serializable {
 
         try
         {
-            FileInputStream inputStream = new FileInputStream("C:\\Users\\Mikkel\\IdeaProjects\\SEP1Projekt3\\ProjectFile.bin");
+            FileInputStream inputStream = new FileInputStream(projectFile);
             ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
 
             projectList = (ProjectList) loadEmployee.readObject();
@@ -178,7 +178,7 @@ public class datamanagement implements Serializable {
         ProjectList projectList = null;
         try
         {
-            FileInputStream inputStream = new FileInputStream("C:\\Users\\Mikkel\\IdeaProjects\\SEP1Projekt3\\ProjectFile.bin");
+            FileInputStream inputStream = new FileInputStream(projectFile);
             ObjectInputStream loadEmployee = new ObjectInputStream(inputStream);
 
             projectList = (ProjectList) loadEmployee.readObject();
