@@ -187,13 +187,8 @@ public void displaySelected(MouseEvent event){
 
 
 public void addTeamMember(){
-  System.out.println("adder team member");
+  System.out.println("adder team member, nåede ikke at blive implementeret");
 }
-
-public void fjernTeamMember(){
-  System.out.println("fuck off mr team member");
-}
-
 
 
   @FXML

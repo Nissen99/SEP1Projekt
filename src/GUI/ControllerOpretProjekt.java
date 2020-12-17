@@ -58,6 +58,7 @@ public class ControllerOpretProjekt implements Initializable {
     employeeArrayList.remove(employeeArrayList.get(addedTeamMember.getSelectionModel().getSelectedIndex()));
 
     list.remove(list.get(addedTeamMember.getSelectionModel().getSelectedIndex()));
+
     //Det var svært at få et overblik over hvem man har valgt, det ville være for stor
     //en ændring at lave nyt tableview til at vise det, så vi addede en counter, så du kan se hvor mange du har valgt
     opretProjectHowManySelectedLabel.setText(String.valueOf(employeeValgtList.size()));
@@ -92,6 +93,7 @@ public class ControllerOpretProjekt implements Initializable {
   }
 
 
+  //så kan man se det ret tydeligt når man trykker Bekræft Oprettelse, da den bliver "reset"
   public void clearOpretFaelter(){
   opretProjectNavn.clear();
     opretProjectTimer.clear();
@@ -126,6 +128,8 @@ addedTeamMember.setItems(list);
     addedTeamMember.setItems(list);
   }
 
+
+  //Det her er overloading, jeg vil gerne køre den igen men uden argumenterne
   public void initialize(){
     employeeValgtList = new ArrayList<>();
     employeeArrayList = logikFacade.datamanagement.getAllEmployeesFromFile();

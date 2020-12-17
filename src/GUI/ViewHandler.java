@@ -27,8 +27,10 @@ public void ChangeScene(ActionEvent event, String FxmlFil) throws IOException {
   Parent nextView = FXMLLoader.load(getClass().getResource(FxmlFil));
   Scene newScene = new Scene(nextView);
   Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
   stage.setScene(newScene);
   stage.setScene(newScene);
+  stage.setTitle(FxmlFil);
 }
 
 
