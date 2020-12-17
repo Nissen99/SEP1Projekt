@@ -44,6 +44,8 @@ public class ControllerOpretMedarbejder implements Initializable
       EmployeeList list = logikFacade.loadEmployee();
       list.addEmployee(new Employee(textFieldMedArbejder.getText()));
       logikFacade.writeToFile(list);
+      textFieldMedArbejder.clear();
+          System.out.println("Medarbejder oprettet");
     }
 
 

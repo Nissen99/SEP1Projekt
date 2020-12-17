@@ -45,13 +45,42 @@
                   <Insets bottom="3.0" />
                </VBox.margin>
             </HBox>
-            <TableView fx:id="projectTableview" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#displaySelected" prefHeight="500.0" prefWidth="480.0">
+            <TableView fx:id="projectTableview" maxHeight="-Infinity" maxWidth="-Infinity" onMouseClicked="#displaySelected" prefHeight="533.0" prefWidth="480.0">
               <columns>
                 <TableColumn fx:id="projectIDCounm" prefWidth="78.0" text="ProjectID" />
-                <TableColumn fx:id="projectNavnCounm" prefWidth="311.0" text="Project Navn" />
-                  <TableColumn fx:id="projectStatusCounm" prefWidth="90.0" text="Project Status" />
+                <TableColumn fx:id="projectNavnCounm" prefWidth="300.0" text="Project Navn" />
+                  <TableColumn fx:id="projectStatusCounm" prefWidth="101.0" text="Project Status" />
               </columns>
             </TableView>
+            <VBox prefHeight="100.0" prefWidth="273.0">
+               <children>
+                  <HBox prefHeight="35.0" prefWidth="270.0">
+                     <children>
+                        <Label text="Project Status:">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <ComboBox fx:id="projectStatusComboBox" prefWidth="150.0">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </ComboBox>
+                        <Button mnemonicParsing="false" onAction="#upDateStatus" text="Bekræft status ændring">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
          </children>
          <HBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -63,12 +92,12 @@
                <children>
                   <Label styleClass="titleLabel" text="Project Navn:">
                      <HBox.margin>
-                        <Insets left="10.0" top="25.0" />
+                        <Insets left="10.0" top="20.0" />
                      </HBox.margin>
                   </Label>
                   <Label fx:id="projectNameLabel" styleClass="normalLabel">
                      <HBox.margin>
-                        <Insets left="10.0" top="25.0" />
+                        <Insets left="10.0" top="20.0" />
                      </HBox.margin>
                   </Label>
                </children>
@@ -77,12 +106,26 @@
                <children>
                   <Label styleClass="titleLabel" text="Project ID:">
                      <HBox.margin>
-                        <Insets left="10.0" top="25.0" />
+                        <Insets left="10.0" top="20.0" />
                      </HBox.margin>
                   </Label>
                   <Label fx:id="projectIDLabel" styleClass="normalLabel">
                      <HBox.margin>
-                        <Insets left="10.0" top="25.0" />
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="20.0" prefWidth="479.0">
+               <children>
+                  <Label styleClass="titleLabel" text="Timer brugt">
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="tidBrugtLabel" styleClass="normalLabel">
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
                      </HBox.margin>
                   </Label>
                </children>
@@ -91,12 +134,12 @@
                <children>
                   <Label styleClass="titleLabel" text="Kunde navn:">
                      <HBox.margin>
-                        <Insets left="10.0" top="25.0" />
+                        <Insets left="10.0" top="20.0" />
                      </HBox.margin>
                   </Label>
                   <Label fx:id="kundeNavnLabel" styleClass="normalLabel">
                      <HBox.margin>
-                        <Insets left="10.0" top="25.0" />
+                        <Insets left="10.0" top="20.0" />
                      </HBox.margin>
                   </Label>
                </children>
@@ -104,9 +147,19 @@
             <HBox prefHeight="31.0" prefWidth="479.0">
                <children>
                   <Label fx:id="projectTeam" text="Project Team" />
+                  <Button mnemonicParsing="false" onAction="#appintProductOwner" text="Gør til Product owner">
+                     <HBox.margin>
+                        <Insets left="35.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#appintScrumMaster" text="Gør til Scrum master">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </Button>
                   <Button fx:id="addTeamMemberKnap" mnemonicParsing="false" onAction="#addTeamMember" style="-fx-background-color: green; -fx-border-style: none;" text="+">
                      <HBox.margin>
-                        <Insets left="350.0" />
+                        <Insets left="25.0" />
                      </HBox.margin>
                   </Button>
                </children>
@@ -126,10 +179,10 @@
                   <Button fx:id="sletProjektKnap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="50.0" mnemonicParsing="false" onAction="#removeProject" prefHeight="60.0" prefWidth="100.0" style="-fx-font-size: 12; -fx-background-color: darkred;" text="Slet projekt" />
                   <Button fx:id="kravKnap" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="50.0" mnemonicParsing="false" onAction="#seKrav" prefHeight="60.0" prefWidth="100.0" text="Krav">
                      <HBox.margin>
-                        <Insets left="15.0" />
+                        <Insets left="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Label text="Project Status:">
+                  <Label text="Indtask brute timer:">
                      <HBox.margin>
                         <Insets left="10.0" />
                      </HBox.margin>
@@ -137,18 +190,18 @@
                         <Font name="System Bold" size="14.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="projectStatusComboBox" prefWidth="150.0">
+                  <TextField fx:id="textAreaBrugteTimer" prefHeight="25.0" prefWidth="32.0">
                      <HBox.margin>
-                        <Insets left="10.0" />
+                        <Insets left="5.0" />
                      </HBox.margin>
-                  </ComboBox>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#addHoursWorked" text="Tilføj timer">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Button>
                </children>
             </HBox>
-            <Button mnemonicParsing="false" onAction="#upDateStatus" text="Button">
-               <VBox.margin>
-                  <Insets left="370.0" />
-               </VBox.margin>
-            </Button>
             <Button fx:id="return_btn_return" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="40.0" minWidth="50.0" mnemonicParsing="false" onAction="#ChangeScene" prefHeight="65.0" prefWidth="125.0" style="-fx-font-size: 12;" text="return " textAlignment="JUSTIFY" />
          </children>
          <HBox.margin>

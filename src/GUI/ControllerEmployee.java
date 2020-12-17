@@ -43,6 +43,7 @@ public class ControllerEmployee implements Initializable
   @FXML
   public Button opretMedarbejder;
   @FXML public Button fjernMedarbejderKnap;
+  @FXML public TableColumn employeeTableCounmProjectStatus;
   private Datalag.datamanagement data;
   private  ILogik logik;
   private GUIFacade gui;
@@ -55,7 +56,6 @@ public class ControllerEmployee implements Initializable
 
   @FXML
   public void opretEmployee(ActionEvent actionEvent) throws IOException {
-    System.out.println("Employee du bøgse");
     Parent nextView = FXMLLoader.load(getClass().getResource("OpretMedarbejder.fxml"));
     Scene newScene = new Scene(nextView);
     Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -119,6 +119,7 @@ public class ControllerEmployee implements Initializable
     employeeProjectTableView.getItems().addAll(logikFacade.datamanagement.getAllProjectsFromFile(person));
     employeeTeableCounmProjectID.setCellValueFactory(new PropertyValueFactory("projectID"));
     employeeTableCounmProjectName.setCellValueFactory(new PropertyValueFactory("projectName"));
+    employeeTableCounmProjectStatus.setCellValueFactory(new PropertyValueFactory("projectStatus"));
   }
 
   @Override
