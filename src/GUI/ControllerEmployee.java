@@ -35,6 +35,7 @@ public class ControllerEmployee implements Initializable
   @FXML public TableColumn employeeRoleCounm;
 
 
+
   @FXML public Button return_button;
   @FXML
   public Label nameLabel;
@@ -49,9 +50,6 @@ public class ControllerEmployee implements Initializable
   private GUIFacade gui;
   private  LogikFacade logikFacade = new LogikFacade();
 
-  public void setlogik(ILogik logik) {
-  this.logik = logik;
-}
 
 
   @FXML
@@ -60,8 +58,7 @@ public class ControllerEmployee implements Initializable
     Scene newScene = new Scene(nextView);
     Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
     stage.setScene(newScene);
-    //  viewHandler.closeView();
-    // model.opretProjekt();
+
   }
 
 
@@ -126,5 +123,6 @@ public class ControllerEmployee implements Initializable
   public void initialize(URL url, ResourceBundle resourceBundle) {
       setup();
       reset();
+
   }
 }
